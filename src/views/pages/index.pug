@@ -1,6 +1,13 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+  .wrapper
+    .maincontent
+      .container
+        .developer
+          .avatar
+            .avatar__pic-wrap
+              img(src="./assets/images/avatars/my-avatar.jpg", alt="Марат Сайфутдинов").avatar__img
+          h1.developer__title Марат Сайфутдинов
+          p.developer__text Личный сайт разработчика
+        
