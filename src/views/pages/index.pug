@@ -2,12 +2,32 @@ extends ../auth.layout.pug
 
 block content
   .wrapper
-    .maincontent
-      .container
-        .developer
-          .avatar
-            .avatar__pic-wrap
-              img(src="./assets/images/avatars/my-avatar.jpg", alt="Марат Сайфутдинов").avatar__img
-          h1.developer__title Марат Сайфутдинов
-          p.developer__text Личный сайт разработчика
-        
+    .welcome-page
+      .welcome-page__auth
+        .auth-btn
+          a(href="#").auth-btn__link Авторизоваться
+      .welcome-page__content
+        .user.welcome-page__user
+          .user__avatar
+            .user__pic-wrap
+              +image('avatars/my-avatar.jpg', 'Фото владельца', 'user__img')
+          h1.user__title Марат Сайфутдинов
+          p.user__text Личный сайт разработчика
+        .socials.user__socials
+          ul.socials__list
+            each item in socials
+              li.socials__item
+                a.socials__link(href='item[1]')
+                  +icon(item[0], 'socials__svg')
+        nav.welcome-nav
+          ul.welcome-nav__list
+            each item in ["Мои работы", "Обо мне", "Блог"]
+              li.welcome-nav__item
+                a(href='#').welcome-nav__link= item
+      footer.copyright
+        ul.copyright__list
+          li.copyright__item &copy Марат Сайфутдинов
+          li.copyright__item 
+            | создано с любовью в 
+            a(href="loftschool.com") Loftschool
+          li.copyright__item 2018

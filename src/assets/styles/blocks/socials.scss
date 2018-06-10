@@ -1,0 +1,17 @@
+.socials__list {
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  margin-right: 20px;
+}
+
+.socials__svg {
+  width: 26px;
+  height: 23px;
+  fill: rgba(#fff, .5);
+  &:hover {
+      fill: $darkgreen;
+  }
+}

@@ -1,0 +1,21 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user__pic-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.user__img {
+  width: 232px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
