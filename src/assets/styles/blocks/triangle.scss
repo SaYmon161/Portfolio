@@ -1,0 +1,18 @@
+.triangle {
+  height: 160px;
+  position: absolute;
+  top: -160px;
+}
+
+.triangle--twoside {
+  fill: $white;
+  width: 50%;
+}
+
+.triangle--left {
+  left: 0;
+}
+
+.triangle--right {
+  right: 0;
+}

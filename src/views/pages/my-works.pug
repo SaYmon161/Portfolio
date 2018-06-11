@@ -1,0 +1,42 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+  - var modMaincontent = 'works__maincontent'
+
+block scripts
+  script(src='works.bundle.js')
+
+block content
+  +hero('works')
+  section.works
+    .container
+      +icon('triangle_left', 'triangle triangle--twoside triangle--left')
+      +icon('triangle_right', 'triangle triangle--twoside triangle--right')
+      .works__title-block
+        .works__title
+          h1.block-title Мои работы
+        .works__title-svg
+          +icon('works_header', 'works__svg')
+      .works__content
+        .works__left
+          .works__left-content
+            .works__left-title
+              h2.block-subtitle
+            .works__left-techs HTML , CSS, JAVASCRIPT
+            a.works__left-btn(href="#")
+              +icon('link', 'works__left-svg')
+              span.works__left-btn-text Посмотреть сайт
+        .works__right
+          .slider
+            .slider__main
+              .slider__pic-wrap
+                img.slider__pic
+            .slider__prev
+              .slider__pic-wrap
+                img.slider__pic
+              +icon('portf_arrow_down', 'slider__prev-svg')
+            .slider__next
+              .slider__pic-wrap
+                img.slider__pic
+              +icon('portf_arrow_up', 'slider__next-svg')

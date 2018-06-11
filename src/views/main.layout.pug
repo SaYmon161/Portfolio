@@ -1,6 +1,7 @@
 include ./common/_mixins
 include ./common/variables
 include ./common/socials
+include ./common/hero
 block variables
 
 doctype html
@@ -14,7 +15,7 @@ html(lang="ru")
     link(rel='stylesheet' href='main.min.css')
   body
     .wrapper
-      .maincontent
+      .maincontent(class = modMaincontent)
         block content
 
       include ./common/footer.pug

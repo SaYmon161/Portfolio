@@ -32,3 +32,10 @@
   font-weight: 400;
   color: #babdbc;
 }
+
+.user__blog-title {
+  &:after {
+    background: #fff;
+  }
+  margin-bottom: 35px;
+}
