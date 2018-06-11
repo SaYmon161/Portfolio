@@ -1,14 +1,16 @@
 section.hero
-  header.header
-    .header__left
-      +socials('header__socials')
-    .header__right
-      a(href = '#').hamburger-menu
-        .hamburger-menu__bars
-  .hero__content
-    .hero__user
-      include ../common/user
-    .hero__title
-      +icon('portfolio_header', 'hero__title-svg')
-  .arrow-down
-    +icon('arrow_down', 'arrow-down__svg')
+  .container.hero__container
+    header.header
+      .header__left
+        +socials('header__socials')
+      .header__right
+        a(href = '#').hamburger-menu
+          .hamburger-menu__bars
+    .hero__content
+      .hero__user
+        include ../common/user
+      .hero__title
+        +icon('portfolio_header', 'hero__title-svg')
+    .arrow-down
+      a.arrow-down__link(href = '#')
+        +icon('arrow_down', 'arrow-down__svg')

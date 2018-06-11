@@ -1,6 +1,9 @@
 .hero {
   background: url(./assets/images/background/forest-bg.jpg);
   height: 600px;
+}
+
+.hero__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +14,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  margin-bottom: 120px;
 }
 
 .hero__user {
@@ -20,6 +24,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
+  
 }
 
 .hero__title {

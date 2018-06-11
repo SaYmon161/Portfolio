@@ -14,10 +14,4 @@ block content
             each item in [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"]]
               li.welcome-nav__item
                 a(href=item[1]).welcome-nav__link= item[0]
-      footer.copyright
-        ul.copyright__list
-          li.copyright__item &copy Марат Сайфутдинов
-          li.copyright__item 
-            | создано с любовью в 
-            a(href="loftschool.com") Loftschool
-          li.copyright__item 2018
+      include ../common/copyright

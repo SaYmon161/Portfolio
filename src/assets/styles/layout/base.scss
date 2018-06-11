@@ -24,8 +24,13 @@ body {
 .container {
   margin: 0 auto;
   width: 95%;
+  padding-top: 28px;
 }
 
+.maincontent {
+  min-height: 100%;
+  position: relative;
+}
 
 button {
   border: 0;

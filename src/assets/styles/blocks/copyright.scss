@@ -1,15 +1,17 @@
 .copyright__list {
   display: flex;
+  font-weight: 300;
 }
 
 .copyright__item {
-  border-right: 1px solid white;
-  padding: 0 5px;
-  &:last-child {
-    border: none;
-    padding-right: 0;
+  display: flex;
+  margin-right: 10px;
+  &::after {
+    content: '|';
+    display: block;
+    margin-left: 10px;
   }
-  &:first-child {
-    padding-left: 0;
+  &:last-child:after {
+    content: '';
   }
 }
