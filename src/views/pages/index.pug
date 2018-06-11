@@ -1,29 +1,19 @@
 extends ../auth.layout.pug
 
 block content
-  .wrapper
+  .wrapper.welcome__wrapper
     .welcome-page
       .welcome-page__auth
         .auth-btn
           a(href="#").auth-btn__link Авторизоваться
       .welcome-page__content
-        .user.welcome-page__user
-          .user__avatar
-            .user__pic-wrap
-              +image('avatars/my-avatar.jpg', 'Фото владельца', 'user__img')
-          h1.user__title Марат Сайфутдинов
-          p.user__text Личный сайт разработчика
-        .socials.user__socials
-          ul.socials__list
-            each item in socials
-              li.socials__item
-                a.socials__link(href='item[1]')
-                  +icon(item[0], 'socials__svg')
+        include ../common/user
+        +socials('welcome-page__socials')
         nav.welcome-nav
           ul.welcome-nav__list
-            each item in ["Мои работы", "Обо мне", "Блог"]
+            each item in [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"]]
               li.welcome-nav__item
-                a(href='#').welcome-nav__link= item
+                a(href=item[1]).welcome-nav__link= item[0]
       footer.copyright
         ul.copyright__list
           li.copyright__item &copy Марат Сайфутдинов

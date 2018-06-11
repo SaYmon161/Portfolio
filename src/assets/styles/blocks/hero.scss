@@ -1,0 +1,43 @@
+.hero {
+  background: url(./assets/images/background/forest-bg.jpg);
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__content {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero__user {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.hero__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.hero__title-svg {
+  fill: rgba(#fff, .12);
+  width: 1180px;
+  height: 320px;
+}
+
+.arrow-down__svg {
+  width: 26px;
+  height: 17px;
+  fill: white;
+}
