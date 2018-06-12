@@ -40,3 +40,37 @@ block content
               .slider__pic-wrap
                 img.slider__pic
               +icon('portf_arrow_up', 'slider__next-svg')
+  section.feedback
+    .container
+      .review
+        .review__title-block
+          .review__title
+            h2.block-subtitle Что обо мне говорят
+          .review__title-svg
+            +icon('about_header', 'review__title-svg')
+        .review__content
+          .review__left
+            .review__desc
+              .review__avatar
+                img(src="assets/images/userfiles/dkoval.jpg", alt="Дмитрий Ковальчук")
+              .review__content
+                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                div Ковальчук Дмитрий
+                div — основатель Loftschool
+          .review__right        
+            .review__desc
+              .review__avatar
+                img(src="assets/images/userfiles/vsaban.jpg", alt="Владимир Сабанцев")
+              .review__content
+                p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                div Владимир Сабанцев
+                div — преподаватель
+      .message
+        form.message__form(action="")
+          h2.message__title.block-subtitle Связаться со мной
+          input(type="text" class= "message__input" placeholder = "Имя" id = "username" name = "username")
+          input(type="text" class= "message__input" placeholder = "email" id = "email" name = "email")
+          textarea(name="message", cols="30", rows="10" class= "message__text" placeholder = "Ваше сообщение")
+          button(type = "submit" class = "message__btn") Отправить
+          button(type = "reset" class = "message__btn") Очистить
+
