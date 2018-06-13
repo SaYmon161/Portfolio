@@ -1,0 +1,24 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.contacts__title {
+  margin-bottom: 30px;
+}
+
+.contacts__item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.contacts__icon {
+  margin-right: 10px;
+}
+
+.contacts__icon-svg {
+  width: 25px;
+  height: 25px;
+  fill: $darkgreen;
+}

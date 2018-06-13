@@ -1,0 +1,30 @@
+.welcome-nav {
+  width: 100%;
+
+}
+
+.welcome-nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.welcome-nav__item {
+  border-right: 2px solid #a0ba9e;
+  
+  &:last-child {
+    border-right: none;
+  }
+  background-color: $green;
+  flex-grow: 1;
+  text-align: center;
+  &:hover {
+    background-color: $darkgreen;
+  }
+}
+
+.welcome-nav__link {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: block;
+}

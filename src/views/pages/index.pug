@@ -1,0 +1,17 @@
+extends ../auth.layout.pug
+
+block content
+  .wrapper.welcome__wrapper
+    .welcome-page
+      .welcome-page__auth
+        .auth-btn
+          a(href="#").auth-btn__link Авторизоваться
+      .welcome-page__content
+        include ../common/user
+        +socials('welcome-page__socials')
+        nav.welcome-nav
+          ul.welcome-nav__list
+            each item in [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"]]
+              li.welcome-nav__item
+                a(href=item[1]).welcome-nav__link= item[0]
+      include ../common/copyright

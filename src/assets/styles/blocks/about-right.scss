@@ -1,0 +1,41 @@
+.about-right {
+  width: 50%;
+  background: $white;
+  position: relative;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-right__triangle {
+  fill: $white;
+  left: 0;
+  width: 100%;
+}
+
+.about-right__title {
+  width: 260px;
+  margin-bottom: 20px;
+}
+
+.about-right__description {
+  margin-bottom: 30px;
+}
+
+.about-right__content {
+  align-self: flex-start
+}
+
+.skills__item {
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skills__title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}

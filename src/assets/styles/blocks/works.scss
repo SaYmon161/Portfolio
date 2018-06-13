@@ -1,0 +1,7 @@
+.works__maincontent {
+  &:after {
+    content: '';
+    display: block;
+    height: 185px;
+  }
+}

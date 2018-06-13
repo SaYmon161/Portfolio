@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.header__socials .socials__svg {
+  fill: white;
+}

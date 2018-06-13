@@ -1,0 +1,76 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+  - var modMaincontent = 'works__maincontent'
+
+block scripts
+  script(src='works.bundle.js')
+
+block content
+  +hero('works')
+  section.works
+    .container
+      +icon('triangle_left', 'triangle triangle--twoside triangle--left')
+      +icon('triangle_right', 'triangle triangle--twoside triangle--right')
+      .works__title-block
+        .works__title
+          h1.block-title Мои работы
+        .works__title-svg
+          +icon('works_header', 'works__svg')
+      .works__content
+        .works__left
+          .works__left-content
+            .works__left-title
+              h2.block-subtitle
+            .works__left-techs HTML , CSS, JAVASCRIPT
+            a.works__left-btn(href="#")
+              +icon('link', 'works__left-svg')
+              span.works__left-btn-text Посмотреть сайт
+        .works__right
+          .slider
+            .slider__main
+              .slider__pic-wrap
+                img.slider__pic
+            .slider__prev
+              .slider__pic-wrap
+                img.slider__pic
+              +icon('portf_arrow_down', 'slider__prev-svg')
+            .slider__next
+              .slider__pic-wrap
+                img.slider__pic
+              +icon('portf_arrow_up', 'slider__next-svg')
+  section.feedback
+    .container
+      .review
+        .review__title-block
+          .review__title
+            h2.block-subtitle Что обо мне говорят
+          .review__title-svg
+            +icon('about_header', 'review__title-svg')
+        .review__content
+          .review__left
+            .review__desc
+              .review__avatar
+                img(src="assets/images/userfiles/dkoval.jpg", alt="Дмитрий Ковальчук")
+              .review__content
+                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                div Ковальчук Дмитрий
+                div — основатель Loftschool
+          .review__right        
+            .review__desc
+              .review__avatar
+                img(src="assets/images/userfiles/vsaban.jpg", alt="Владимир Сабанцев")
+              .review__content
+                p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                div Владимир Сабанцев
+                div — преподаватель
+      .message
+        form.message__form(action="")
+          h2.message__title.block-subtitle Связаться со мной
+          input(type="text" class= "message__input" placeholder = "Имя" id = "username" name = "username")
+          input(type="text" class= "message__input" placeholder = "email" id = "email" name = "email")
+          textarea(name="message", cols="30", rows="10" class= "message__text" placeholder = "Ваше сообщение")
+          button(type = "submit" class = "message__btn") Отправить
+          button(type = "reset" class = "message__btn") Очистить
+
