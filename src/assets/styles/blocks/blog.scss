@@ -1,5 +1,5 @@
 .blog {
-  height: 1190px;
+  min-height: 1190px;
   position: relative;
   background: $white;
   padding-top: 40px;
@@ -10,10 +10,11 @@
     content: '';
     display: block;
     height: 185px;
+    background: $white;
   }
 }
 
-.blog__content {
+.blog__container {
   display: flex;
 }
 
@@ -35,9 +36,9 @@
     content: '';
     margin-left: 20px;
     height: 40px;
-    width: 2px;
+    min-width: 3px;
     background: $green;
-    display: block;
+    display: flex;
     opacity: 0;
   }
 }

@@ -1,7 +1,33 @@
-.works__maincontent {
-  &:after {
-    content: '';
-    display: block;
-    height: 185px;
-  }
+.works {
+  position: relative;
+  background: #f8f9f5;
+}
+
+.works__triangle {
+  fill: #f8f9f5;
+}
+
+.works__title-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.works__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.works__title-svg {
+  fill: rgba(#93c42e, 0.1);
+  width: 500px;
+  height: 160px;
+}
+
+
+.review__title {
+  width: 350px;
+  line-height: 1;
 }

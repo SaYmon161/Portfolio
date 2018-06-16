@@ -19,6 +19,7 @@ module.exports = {
       path: "./src/assets/images/icons"
     }),
     require("postcss-svgo"),
-    require("cssnano")()
+    require("cssnano")(),
+    require("postcss-extend")
   ]
 };

@@ -1,0 +1,52 @@
+.message {
+  width: 380px;
+  height: 460px;
+  background: rgba($white, 0.7);
+  padding-top: 30px;
+  border-radius: 5px;
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+
+.message__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.message__input {
+  width: 340px;
+  height: 45px;
+  padding: 25px 20px;
+  border: 0;
+  border-radius: 22px;
+  &::placeholder {
+    color: $light-grey;
+  }
+}
+
+.message__textarea {
+  @extend .message__input;
+  height: 140px;
+  resize: none;
+}
+
+.message__form-row {
+  width: 100%;
+}
+
+.message__btn {
+  width: 50%;
+  height: 43px;
+  color: white;
+  background: $green;
+  border-right: 1px solid #fff;
+  &:last-child {
+    border: 0;
+  }
+  &:hover {
+    background: $darkgreen;
+  }
+}
