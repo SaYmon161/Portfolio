@@ -25,12 +25,20 @@
   &::placeholder {
     color: $light-grey;
   }
+  &:focus {
+    outline: none;
+    border: 2px solid $green;
+  }
 }
 
 .message__textarea {
   @extend .message__input;
   height: 140px;
   resize: none;
+  &:focus {
+    outline: none;
+    border: 2px solid $green;
+  }
 }
 
 .message__form-row {

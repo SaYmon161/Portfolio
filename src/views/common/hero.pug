@@ -14,7 +14,10 @@ mixin hero(modHero)
           else
             include ../common/user
         .hero__title
-          +icon('portfolio_header', 'hero__title-svg')
-      .arrow-down
-        a.arrow-down__link(href = '#')
-          +icon('arrow_down', 'arrow-down__svg')
+          if modHero == 'blog-hero'
+            +icon('blog_header', 'hero__title-svg')
+          else
+            +icon('portfolio_header', 'hero__title-svg')
+      unless modHero == 'blog-hero'
+          a.hero__link(href = '#')
+            +icon('arrow_down', 'hero__arrow-down-svg')

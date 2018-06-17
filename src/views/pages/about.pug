@@ -13,11 +13,8 @@ block content
     .about-left
       +icon('triangle_left', 'triangle about-left__triangle')
       .about-left__title-block
-        .about-left__title-wrap
-          .about-left__title
-            h2.block-title Обо мне
-          .about-left__title-svg
-            +icon('about_header', 'about-left__svg')
+          h2.block-title.about-left__title Обо мне
+          +icon('about_header', 'about-left__title-svg')
       .about-left__content
         .about-left__pic-wrap
           +image('avatars/my-avatar.jpg', 'Мое фото', 'about-left__image')
@@ -29,8 +26,7 @@ block content
             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
     .about-right
       +icon('triangle_right', 'triangle about-right__triangle')
-      .about-right__title
-        h2.block-subtitle Чем я могу быть вам полезен
+      h2.block-subtitle.about-right__title Чем я могу быть вам полезен
       .about-right__description
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about-right__content

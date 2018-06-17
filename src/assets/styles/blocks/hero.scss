@@ -1,6 +1,6 @@
 .hero {
   background: url(./assets/images/background/forest-bg.jpg);
-  height: 600px;
+  min-height: 600px;
 }
 
 .hero__container {
@@ -10,7 +10,7 @@
 }
 
 .hero__content {
-  height: 320px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   position: relative;
@@ -36,12 +36,17 @@
 }
 
 .hero__title-svg {
-  fill: rgba(#fff, .12);
+  fill: rgba(#fff, .3);
   width: 1180px;
   height: 320px;
 }
 
-.arrow-down__svg {
+.hero__link {
+  position: relative;
+  z-index: 100;
+}
+
+.hero__arrow-down-svg {
   width: 26px;
   height: 17px;
   fill: white;

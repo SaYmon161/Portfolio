@@ -1,0 +1,32 @@
+.fullscreen-menu {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($green, 0.87);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.fullscreen-menu__item {
+  margin-bottom: 55px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menu__item-title {
+  color: $white;
+  &:after {
+  display: none;
+  background: $white;
+  }
+}
+
+.fullscreen-menu__item--active .menu__item-title:after {
+  display: block;
+}

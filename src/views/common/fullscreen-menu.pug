@@ -1,0 +1,9 @@
+.fullscreen-menu
+  .close
+  ul.fullscreen-menu__list
+    - var menu = [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"], ["Авторизация", "index.html"]]
+    each item in menu
+      li.fullscreen-menu__item.fullscreen-menu__item--active
+        a(href=item[1]).fullscreen-menu__item-link
+          h2.block-title.menu__item-title= item[0]
+

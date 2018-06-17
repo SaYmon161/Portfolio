@@ -3,6 +3,7 @@
   background-color: $beige;
   position: relative;
   display: flex;
+  align-items: flex-start;
   padding-right: 20px;
 }
 
@@ -14,20 +15,14 @@
 .about-left__title-block {
   text-align: center;
   width: 50%;
-}
-
-.about-left__title-wrap {
   position: relative;
+  margin-top: -40px;
 }
 
 .about-left__title-svg {
   fill: rgba($green, .1);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 40;
-  width: 100%;
+  width: 360px;
+  height: 120px;
 }
 
 .about-left__title {
@@ -35,7 +30,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 40;
   width: 100%;
 }
 
