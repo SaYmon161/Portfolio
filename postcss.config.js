@@ -20,6 +20,7 @@ module.exports = {
     }),
     require("postcss-svgo"),
     require("cssnano")(),
-    require("postcss-extend")
+    require("postcss-extend"),
+    require("postcss-color-function")
   ]
 };

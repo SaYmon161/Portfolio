@@ -55,34 +55,3 @@
   width: 60%;
 }
 
-.article {
-  margin-bottom: 50px;
-  &::after {
-    content: '';
-    display: block;
-    width: 685px;
-    height: 4px;
-    background: #ecebe4;
-    margin-top: 50px;
-  }
-  &:last-child:after {
-    display: none;
-  }
-}
-
-.article h2 {
-  @include webissimo;
-  font-weight: 700;
-  font-size: 35px;
-  margin-bottom: 35px;
-}
-
-.article span {
-  color: $green;
-  display: block;
-  margin-bottom: 30px;
-}
-
-.article p {
-  margin-bottom: 20px;
-}

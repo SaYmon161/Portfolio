@@ -25,11 +25,18 @@
 }
 
 .welcome-page__user {
-  display: none;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
+}
+
+.welcome-page__side {
+  display: none;
+}
+
+.welcome-page__side--displayed {
+  display: flex;
 }
 
 .welcome-page__auth {
@@ -41,10 +48,6 @@
   &:after {
     background: $white;
   }
-}
-
-.displayed {
-  display: flex;
 }
 
 .auth-btn {

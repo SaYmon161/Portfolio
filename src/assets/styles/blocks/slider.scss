@@ -17,9 +17,11 @@
 }
 
 .slider__skills {
+  display: block;
   color: $darkgreen;
   text-align: center;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .slider__info-btn-svg {
@@ -32,11 +34,14 @@
 .slider__info-btn {
   width: 200px;
   height: 45px;
-  background: $darkgreen;
+  background: $green;
   border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover {
+    background: $darkgreen;
+  }
 }
 
 .slider__info-btn-text {
@@ -53,13 +58,16 @@
 }
 
 .slider__big-pic {
-  width: 100%;
+  width: 80%;
 }
 
 .slider__prev {
   grid-area: prev;
   &:before {
     background: rgba($light-grey, 0.4);
+  }
+  &:hover:before {
+    background: rgba($light-grey, 0.7);
   }
 }
 
@@ -73,11 +81,18 @@
   fill: white;
 }
 
-.slider__btn {
-  position: relative;
+.slider__container {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider__btn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   &:before {
     content: '';
     position: absolute;
@@ -89,17 +104,23 @@
 }
 
 .slider__pic-wrap {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider__small-pic {
-  width: 100%;
+  width: 80%;
 }
 
 .slider__next {
   grid-area: next;
   &:before {
     background: rgba($grey, 0.4);
+  }
+  &:hover:before {
+    background: rgba($grey, 0.7);
   }
 }
 
