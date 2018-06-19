@@ -21,6 +21,10 @@ module.exports = {
     require("postcss-svgo"),
     require("cssnano")(),
     require("postcss-extend"),
-    require("postcss-color-function")
+    require("postcss-color-function"),
+    require("postcss-pxtorem")({
+      propList: ['*', '!border*'],
+      minPixelValue: 5
+    })
   ]
 };

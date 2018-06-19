@@ -1,8 +1,3 @@
-.hero {
-  background: url(./assets/images/background/forest-bg.jpg);
-  min-height: 600px;
-}
-
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -50,4 +45,7 @@
   width: 26px;
   height: 17px;
   fill: white;
+  &:hover {
+    fill:$light-grey;
+  }
 }

@@ -73,3 +73,9 @@
     margin-right: 0;
   }
 }
+
+.footer-nav__link {
+  &:hover {
+    color: $light-grey;
+  }
+}

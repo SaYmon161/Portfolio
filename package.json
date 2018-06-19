@@ -71,6 +71,7 @@
   "dependencies": {
     "normalize.css": "^7.0.0",
     "postcss-color-function": "^4.0.1",
+    "postcss-pxtorem": "^4.0.1",
     "promptly": "^3.0.3",
     "pug": "^2.0.3",
     "request": "^2.87.0",
