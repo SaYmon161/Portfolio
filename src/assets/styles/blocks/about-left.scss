@@ -1,11 +1,32 @@
+
 .about-left {
   width: 50%;
+  display: flex;
+  justify-content: center;
   background-color: $beige;
+  position: relative;
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.about-left__container {
   position: relative;
   display: flex;
   align-items: flex-start;
-  padding-right: 20px;
+  padding-right: 1%;
+  
+  @include laptopL {
+    flex-direction: column;
+    padding-right: 5%;
+  }
+
+  @include tablets {
+    width: 70%;
+    padding-right: 0;
+  }
 }
+
 
 .about-left__triangle {
   fill: $beige;
@@ -17,6 +38,15 @@
   width: 50%;
   position: relative;
   margin-top: -40px;
+
+  @include laptopL {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  @include tablets {
+    margin-top: 0;
+  }
 }
 
 .about-left__title-svg {
@@ -35,6 +65,18 @@
 
 .about-left__content {
   width: 50%;
+  padding-top: 20px;
+
+  @include laptopL {
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 0;
+  }
+
+  @include tablets {
+    padding-left: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .about-left__pic-wrap {

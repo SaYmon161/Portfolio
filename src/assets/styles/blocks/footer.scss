@@ -11,6 +11,11 @@
   margin-top: -185px;
   position: relative;
   z-index: 100;
+
+  @include tablets {
+    height: 275px;
+    margin-top: -275px;
+  }
 }
 
 .footer__col {
@@ -28,6 +33,16 @@
   &:last-child:after {
     display: none;
   }
+
+  @include tablets {
+    width: 50%;
+  }
+}
+
+.footer__col--wide {
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .footer__content {
@@ -36,6 +51,10 @@
 
 .footer__row {
   display: flex;
+  
+  @include tablets {
+    flex-wrap: wrap
+  }
 }
 
 .footer__row--centered {

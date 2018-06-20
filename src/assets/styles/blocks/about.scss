@@ -1,4 +1,8 @@
 .about {
   display: flex;
   min-height: 860px;
+  
+  @include tablets {
+    flex-direction: column;
+  }
 }
