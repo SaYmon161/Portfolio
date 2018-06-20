@@ -10,17 +10,17 @@ block scripts
 block content
   +hero('blog-hero')
   section.blog
-    .container
-      +icon('triangle_left', 'triangle triangle--twoside triangle--left')
-      +icon('triangle_right', 'triangle triangle--twoside triangle--right')
-      .blog__content
+    +icon('triangle_left', 'triangle triangle--twoside triangle--left')
+    +icon('triangle_right', 'triangle triangle--twoside triangle--right')
+    .blog__content
+      .container.blog__container
         aside.blog__aside-menu
           ul.blog__list
             li.blog__item.blog__item--active Самое важное в SASS
-            li.blog__item Приёмы в вёрстке, без которых не обходится ни один сайт
+            li.blog__item.blog__item--active Приёмы в вёрстке, без которых не обходится ни один сайт
             li.blog__item Самый необходимый набор Gulp плагинов
             li.blog__item Почему я выбрал Jade
-        .blog__articles
+        section.blog__articles
           article.article
             h2 Самое важное в SASS
             span 22 ноября 2016

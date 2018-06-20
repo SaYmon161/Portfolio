@@ -1,0 +1,24 @@
+mixin hero(modHero)
+  header.header
+    .container.header__container
+      .header__left
+        +socials('header__socials')
+      .header__right
+        a(href = '#').hamburger-menu
+          .hamburger-menu__bars
+    section.hero
+      .container.hero__container
+        .hero__content
+          .hero__user
+            if modHero == 'blog-hero'
+              include ../common/blog-user
+            else
+              include ../common/user
+          .hero__title
+            if modHero == 'blog-hero'
+              +icon('blog_header', 'hero__title-svg')
+            else
+              +icon('portfolio_header', 'hero__title-svg')
+        unless modHero == 'blog-hero'
+            a.hero__link(href = '#')
+              +icon('arrow_down', 'hero__arrow-down-svg')

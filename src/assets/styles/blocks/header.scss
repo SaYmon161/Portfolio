@@ -1,7 +1,11 @@
 .header {
+  background: url(./assets/images/background/forest-bg.jpg);
+  min-height: 600px;
+}
+
+.header__container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin-bottom: 30px;
 }
 

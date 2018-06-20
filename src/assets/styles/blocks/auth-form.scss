@@ -1,0 +1,145 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.auth-form__input-label {
+  display: flex;
+}
+
+.auth-form__ico-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  background: #f0efe9;
+  width: 45px;
+  height: 45px;
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
+}
+
+.auth-form__input-svg {
+  width: 17px;
+  height: 17px;
+  fill: $light-grey;
+}
+
+.auth-form__input {
+  order: 2;
+  width: 295px;
+  height: 45px;
+  border-bottom-right-radius: 22px;
+  border-top-right-radius: 22px;
+  border: 0;
+  padding: 17px 20px;
+  &:focus {
+    outline: none;
+    border: 1px solid $green;
+  }
+  &:focus + .auth-form__ico-wrap .auth-form__input-svg {
+    fill: $green;
+  }
+}
+
+.auth-form__check-label {
+  display: flex;
+}
+
+.auth-form__check {
+  position: absolute;
+  left: -99999px;
+  &:checked + .auth-form__check-block {
+    background: $green;
+  }
+  &:checked + .auth-form__check-block .auth-form__check-svg {
+    display: block;
+  }
+}
+
+.auth-form__check-block {
+  width: 20px;
+  height: 20px;
+  background: $white;
+  border-radius: 2px;
+  position: relative;
+  margin-right: 11px;
+}
+
+.auth-form__check-svg {
+  display: none;
+  width: 12px;
+  height: 9px;
+  fill: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.auth-form__row {
+  display: flex;
+}
+
+.auth-form__radio-label {
+  display: flex;
+  margin-right: 40px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.auth-form__custom-radio {
+  position: relative;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $white;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $green;
+  }
+}
+
+.auth-form__radio {
+  position: absolute;
+  left: -99999px;
+  &:checked + .auth-form__custom-radio::after {
+    display: block;
+  }
+}
+
+.auth-form__btn-row {
+  width: 100%;
+}
+
+.auth-form__btn {
+  width: 50%;
+  height: 43px;
+  font-weight: 500;
+  color: white;
+  background: $green;
+  border-right: 1px solid $light-grey;
+  &:last-child {
+    border: 0;
+  }
+  &:hover {
+    background: $darkgreen;
+  }
+  &:focus {
+    outline: none;
+  }
+}

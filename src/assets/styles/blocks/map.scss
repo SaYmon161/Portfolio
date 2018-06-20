@@ -1,12 +1,12 @@
 .map {
   background: url(./assets/images/background/map-bg.jpg);
-  height: 1115px;
+  min-height: 1115px;
   position: relative;
 }
 
 .map__data {
   width: 380px;
-  height: 315px;
+  min-height: 315px;
   background-color: rgba($white, .85);
   position: absolute;
   top: 50%;

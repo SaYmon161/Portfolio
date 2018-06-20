@@ -3,15 +3,44 @@ extends ../auth.layout.pug
 block content
   .wrapper.welcome__wrapper
     .welcome-page
-      .welcome-page__auth
-        .auth-btn
-          a(href="#").auth-btn__link Авторизоваться
+      .auth-btn
+        a(href="#").auth-btn__link Авторизоваться
       .welcome-page__content
-        include ../common/user
-        +socials('welcome-page__socials')
-        nav.welcome-nav
-          ul.welcome-nav__list
-            each item in [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"]]
-              li.welcome-nav__item
-                a(href=item[1]).welcome-nav__link= item[0]
+        .welcome-page__user.welcome-page__side.welcome-page__side--displayed
+          include ../common/user
+          +socials('welcome-page__socials')
+          nav.welcome-nav
+            ul.welcome-nav__list
+              each item in [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"]]
+                li.welcome-nav__item
+                  a(href=item[1]).welcome-nav__link= item[0]
+        .welcome-page__auth.welcome-page__side
+          h2.block-subtitle.welcome-page__auth-title Авторизуйтесь
+          form.auth-form(action="")
+            label(class="auth-form__input-label" for="login")
+              input(class="auth-form__input" id="login" type="text" placeholder="Логин")
+              .auth-form__ico-wrap
+                +icon("login", "auth-form__input-svg")
+            label(class="auth-form__input-label" for="password")
+              input(class="auth-form__input" id="password" type="password" placeholder="Пароль")
+              .auth-form__ico-wrap
+                +icon("password", "auth-form__input-svg")
+            label(class="auth-form__check-label" for="human-check")
+              input(class="auth-form__check" id="human-check" type="checkbox")
+              .auth-form__check-block
+                +icon('check', 'auth-form__check-svg')
+              | Я человек
+            .auth-form__quest Вы точно не робот?
+            .auth-form__row
+              label(class="auth-form__radio-label")
+                input(class="auth-form__radio" id="human-yes" type="radio" name="human-check")
+                .auth-form__custom-radio
+                | Да
+              label(class="auth-form__radio-label")
+                input(class="auth-form__radio" id="human-not-sure" type="radio" name="human-check")
+                .auth-form__custom-radio
+                | Не уверен
+            .auth-form__btn-row
+              button(type = "button" class = "auth-form__btn") На главную
+              button(type = "submit" class = "auth-form__btn") Войти
       include ../common/copyright

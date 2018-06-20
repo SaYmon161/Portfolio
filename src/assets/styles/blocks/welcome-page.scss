@@ -21,18 +21,37 @@
   border-radius: 10px;
   overflow: hidden;
   background-color: rgba(#122620, .6);
-  display: flex;
   padding-top: 40px;
-  flex-direction: column;
+}
+
+.welcome-page__user {
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.welcome-page__side {
+  display: none;
+}
+
+.welcome-page__side--displayed {
+  display: flex;
 }
 
 .welcome-page__auth {
-  align-self: flex-end;
+  @extend .welcome-page__user;
+  height: 100%;
+}
+
+.welcome-page__auth-title {
+  &:after {
+    background: $white;
+  }
 }
 
 .auth-btn {
+  align-self: flex-end;
   border-radius: 22px;
   border: 2px solid #fff;
   overflow: hidden;
