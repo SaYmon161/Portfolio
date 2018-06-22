@@ -16,6 +16,18 @@
     display: block;
     height: 185px;
   }
+
+  @include tablets {
+    &::after {
+      height: 275px;
+    }
+  }
+
+  @include mobileL {
+    &:after {
+      height: 355px;
+    }
+  }
 }
 
 .feedback__arrow-up {

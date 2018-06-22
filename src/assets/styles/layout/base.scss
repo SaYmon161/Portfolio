@@ -1,3 +1,9 @@
+html {
+  @include mobileL {
+    font-size: 14px;
+  }
+}
+
 body, html {
   height: 100%;
 }

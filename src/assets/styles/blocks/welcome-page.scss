@@ -9,6 +9,10 @@
   padding-top: 2.6%;
   padding-right: 5.5%;
   padding-bottom: 4.4%;
+
+  @include mobileL {
+    padding-right: 0;
+  }
 }
 
 .welcome__wrapper {
@@ -45,6 +49,7 @@
 }
 
 .welcome-page__auth-title {
+  margin-bottom: 20px;
   &:after {
     background: $white;
   }
@@ -58,6 +63,10 @@
   &:hover {
     background-color: $darkgreen;
     border-color: $green;
+  }
+
+  @include mobileL {
+    align-self: center;
   }
 }
 

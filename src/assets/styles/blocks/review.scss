@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
+
+  @include mobileL {
+    flex-direction: column;
+  }
 }
 
 .review__content {
@@ -12,6 +16,10 @@
   margin-right: 25px;
   &:last-child {
     margin-right: 0;
+  }
+
+  @include mobileL {
+    margin-right: 0;;
   }
 }
 

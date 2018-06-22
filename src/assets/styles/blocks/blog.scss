@@ -11,6 +11,14 @@
     display: block;
     height: 185px;
     background: $white;
+    
+    @include tablets {
+      height: 275px;
+    }
+
+    @include mobileL {
+      height: 355px;
+    }
   }
 }
 
@@ -21,7 +29,10 @@
 .blog__aside-menu {
   width: 20%;
   text-align: right;
-  margin-right: 120px;
+  margin-right: 10%;
+  @include tablets {
+    display: none;
+  }
 }
 
 .blog__item {
@@ -53,5 +64,9 @@
 
 .blog__articles {
   width: 60%;
+
+  @include tablets {
+    width: 95%;
+  }
 }
 

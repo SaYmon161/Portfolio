@@ -26,16 +26,17 @@ block content
         .slider__main
           .slider__pic-wrap
             +image('userfiles/loftschool.png', "loftschool", "slider__big-pic")
-        .slider__container
-          a.slider__prev.slider__btn(href="#")
-            +icon('portf_arrow_down', 'slider__prev-svg')
-          .slider__pic-wrap
-            +image('userfiles/loftschool.png', "loftschool", "slider__small-pic")
-        .slider__container
-          a.slider__next.slider__btn(href="#")
-            +icon('portf_arrow_up', 'slider__next-svg')
-          .slider__pic-wrap
-            +image('userfiles/loftschool.png', "loftschool", "slider__small-pic")
+        .slider__buttons
+          .slider__container
+            a.slider__prev.slider__btn(href="#")
+              +icon('portf_arrow_down', 'slider__prev-svg')
+            .slider__pic-wrap
+              +image('userfiles/loftschool.png', "loftschool", "slider__small-pic")
+          .slider__container
+            a.slider__next.slider__btn(href="#")
+              +icon('portf_arrow_up', 'slider__next-svg')
+            .slider__pic-wrap
+              +image('userfiles/loftschool.png', "loftschool", "slider__small-pic")
   section.feedback
     .works__title-block.feedback__title
       h1.block-title.works__title.review__title что обо мне говорят
