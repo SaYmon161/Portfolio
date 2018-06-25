@@ -1,6 +1,6 @@
 .map {
   background: url(./assets/images/background/map-bg.jpg);
-  min-height: 1115px;
+  height: 100vh;
   position: relative;
 }
 
@@ -9,8 +9,12 @@
   min-height: 315px;
   background-color: rgba($white, .85);
   position: absolute;
-  top: 50%;
+  top: calc(50vh - 185px/2);
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @include tablets {
+    top: calc(50vh - 275px/2);
+  }
 }
 

@@ -1,3 +1,4 @@
+
 var container;
 var camera, scene, renderer;
 var uniforms;
@@ -63,4 +64,4 @@ document.addEventListener("mousemove", function(event) {
     x: (event.pageX / window.innerWidth - 0.5) * 3,
     y: (event.pageY / window.innerHeight - 0.5) * 3
   });
-})
+});
