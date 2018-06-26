@@ -17,3 +17,9 @@
   font-weight: 500;
   margin-bottom: 15px;
 }
+
+.skills__list {
+  @include tablets {
+    width: 100%;
+  }
+}

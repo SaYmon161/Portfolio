@@ -1,6 +1,25 @@
 .header {
-  background: url(./assets/images/background/forest-bg.jpg);
-  min-height: 670px;
+  height: 100vh;
+
+  @include tablets {
+    height: 75vh;
+  }
+
+  @include mobileL {
+    height: 100vh;
+  }
+}
+
+.header__img {
+  height: 130%;
+}
+
+.header__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .header__container {

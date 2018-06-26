@@ -6,11 +6,18 @@
 
 .contacts__title {
   margin-bottom: 30px;
+  @include tablets {
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__item {
   display: flex;
   margin-bottom: 20px;
+
+  @include tablets {
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__icon {

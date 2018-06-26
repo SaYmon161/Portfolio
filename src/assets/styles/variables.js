@@ -7,7 +7,7 @@ module.exports = {
   grey: "#373e42",
   "light-grey": "#dfdcd5",
   mobileS: "320px",
-  mobileM: "375px",
+  mobile: "375px",
   mobileL: "425px",
   tablets: "768px",
   laptop: "1024px",

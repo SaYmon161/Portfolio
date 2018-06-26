@@ -15,11 +15,12 @@
   @include tablets {
     height: 275px;
     margin-top: -275px;
+    font-size: 14px;
   }
 
   @include mobileL {
-    height: 355px;
-    margin-top: -355px;
+    height: 395px;
+    margin-top: -395px;
   }
 }
 
@@ -44,14 +45,23 @@
   }
 
   @include tablets {
-    width: 50%;
-    margin-bottom: 20px;
+    width: 51.5%;
+    padding-left: 3%;
+    margin-bottom: 27px;
     &:last-child{
       margin-bottom: 0;
     }
     &:after {
       height: 85px;
     }
+    &:nth-child(2) {
+      padding-left: 3.5%;
+      width: 48.5%;
+      &:after {
+        display: none;
+      }
+    }
+    
   }
 
   @include mobileL {
@@ -59,10 +69,19 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    min-height: 50px;
     &:after {
       height: 1px;
       width: 95%;
       background-color: #757a7d;
+    }
+    &:nth-child(2) {
+      padding-left: 3.5%;
+      width: 100%;
+      min-height: 80px;
+      &:after {
+        display: block;
+      }
     }
   }
 }
@@ -74,8 +93,13 @@
 }
 
 .footer__content {
+  display: flex;
   flex-direction: column;
   width: 100%;
+
+  @include mobileL {
+    align-items: center;
+  }
 }
 
 .footer__row {
@@ -84,7 +108,7 @@
   @include tablets {
     flex-wrap: wrap;
   }
-
+  
   @include mobileL {
     flex-direction: column;
   }
@@ -126,6 +150,11 @@
   @include laptop {
     flex-wrap: wrap;
   }
+
+  @include mobileL {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .footer-nav__item {
@@ -136,6 +165,10 @@
   @include laptopL {
     margin-right: 3%;
   }
+
+  @include tablets{
+    margin-right: 6%;
+  }
 }
 
 .footer-nav__link {
@@ -143,3 +176,4 @@
     color: $light-grey;
   }
 }
+

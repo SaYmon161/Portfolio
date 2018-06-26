@@ -1,26 +1,29 @@
+.skills-row  {
+  @include tablets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .skills-row__list {
   display: flex;
   flex-wrap: wrap;
-
+  
   @include tablets {
-    justify-content: center;
     width: 70%;
-    min-width: 285px;
+    justify-content: space-around;
+    align-items: stretch
+  }
+
+  @include mobileL {
   }
 }
 
 .skills-row__item {
   width: 120px;
   height: 120px;
-  margin-right: 55px;
   margin-bottom: 30px;
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @include tablets {
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
-  }
+  
 }

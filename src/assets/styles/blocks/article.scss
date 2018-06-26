@@ -18,6 +18,10 @@
   font-weight: 700;
   font-size: 35px;
   margin-bottom: 35px;
+
+  @include tablets {
+    font-size: 32px;
+  }
 }
 
 .article span {

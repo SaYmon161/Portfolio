@@ -11,6 +11,10 @@
     width: 100%;
     padding-top: 20px;
   }
+
+  @include mobileL {
+    padding-left: 0;
+  }
 }
 
 .about-right__triangle {
@@ -49,5 +53,13 @@
 }
 
 .about-right__content {
-  align-self: flex-start
+  align-self: flex-start;
+
+  @include tablets {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
