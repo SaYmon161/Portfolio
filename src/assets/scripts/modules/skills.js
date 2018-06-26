@@ -28,6 +28,7 @@ const skill = {
     }
   },
   mounted() {
+    console.log(this.$parent.$parent);
     this.drawCircle();
   }
 };

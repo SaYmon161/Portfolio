@@ -1,6 +1,8 @@
 mixin hero(modHero)
   header.header
-    img(src="./assets/images/header/water-min.jpg").header__img
+    img.header__img(
+      src="./assets/images/header/water-min.jpg"
+      srcset="./assets/images/index/water.jpg")
     .header__content
       .container.header__container
         .header__left
