@@ -33,7 +33,7 @@ module.exports = {
     new UglifyJsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: ["vendor", "bootloader"]
-    }),
+    })
   ],
   resolve: {
     alias: {

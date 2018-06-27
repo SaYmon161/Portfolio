@@ -20,7 +20,7 @@ const parallax = (function() {
       this.move(heroContent, wScroll, 15);
     }
   };
-}());
+})();
 
 if (!isMobile) {
   window.addEventListener("scroll", () => {
