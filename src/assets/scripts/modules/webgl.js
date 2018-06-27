@@ -4,12 +4,22 @@ var camera, scene, renderer;
 var uniforms;
 var mouse = { x: 0, y: 0 };
 var loader = new THREE.TextureLoader();
+const MobileDetect = require("mobile-detect");
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+var container = document.getElementById("container");
 
-init();
-animate();
+console.log(isMobile);
+
+if (!isMobile) {
+  init();
+  animate();
+} else {
+  container.classList.add("index-mobile");
+}
+
 
 function init() {
-  container = document.getElementById("container");
 
   camera = new THREE.Camera();
   camera.position.z = 1;

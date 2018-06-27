@@ -37,3 +37,10 @@
     @content;
   } 
 }
+
+@mixin  retina {
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5),
+  screen and (min-resolution: 144dpi) {
+    @content;
+  }
+}

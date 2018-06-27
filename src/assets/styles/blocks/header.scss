@@ -10,8 +10,22 @@
   }
 }
 
+.header__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
 .header__img {
-  height: 130%;
+  height: 40%;
+
+  @include tablets {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .header__content {

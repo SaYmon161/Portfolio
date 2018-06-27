@@ -70,6 +70,7 @@
   ],
   "dependencies": {
     "hamburgers": "^0.9.3",
+    "mobile-detect": "^1.4.2",
     "normalize.css": "^7.0.0",
     "postcss-color-function": "^4.0.1",
     "postcss-pxtorem": "^4.0.1",

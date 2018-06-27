@@ -18,6 +18,10 @@
     margin-right: 0;
   }
 
+  @include tablets {
+    width: 50%;
+  }
+
   @include mobileL {
     margin-right: 0;;
   }

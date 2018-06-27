@@ -1,8 +1,11 @@
 mixin hero(modHero)
   header.header
-    img.header__img(
-      src="./assets/images/header/water-min.jpg"
-      srcset="./assets/images/index/water.jpg")
+    picture.header__picture
+      source(media="(-webkit-min-device-pixel-ratio: 1.5, min-resolution: 144dpi)", srcset="./assets/images/index/water.jpg").header__img
+      source(media="(min-width: 1920px)", srcset="./assets/images/header/water-min.jpg").header__img
+      source(media="(min-width: 768px)", srcset="./assets/images/header/water-1920.jpg").header__img
+      source(media="(min-width: 425px)", srcset="./assets/images/header/water-768.jpg").header__img
+      img(src="./assets/images/header/water-425.jpg").header__img
     .header__content
       .container.header__container
         .header__left

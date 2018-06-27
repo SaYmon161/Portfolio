@@ -18,7 +18,12 @@
   padding-right: 5.5%;
   padding-bottom: 4.4%;
 
+  @include tablets {
+    padding-left: 5.5%;
+  }
+
   @include mobileL {
+    padding-left: 0;
     padding-right: 0;
   }
 }
