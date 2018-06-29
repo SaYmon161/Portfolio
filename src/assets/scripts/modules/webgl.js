@@ -1,4 +1,3 @@
-
 var container;
 var camera, scene, renderer;
 var uniforms;
@@ -18,9 +17,7 @@ animate();
 //  container.classList.add("index-mobile");
 // }
 
-
 function init() {
-
   camera = new THREE.Camera();
   camera.position.z = 1;
   scene = new THREE.Scene();
@@ -35,7 +32,10 @@ function init() {
     u_animation: { type: "f", value: 0.0 },
     u_mouse: { type: "v2", value: new THREE.Vector2() },
     u_resolution: { type: "v2", value: new THREE.Vector2() },
-    u_size: { type: "v2", value: new THREE.Vector2(MyTexture.width, MyTexture.height) },
+    u_size: {
+      type: "v2",
+      value: new THREE.Vector2(MyTexture.width, MyTexture.height)
+    },
     u_image: { value: MyTexture },
     u_maps: { value: mapTexture }
   };

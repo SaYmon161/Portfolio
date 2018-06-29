@@ -89,7 +89,11 @@ html(lang="en")
           gl_FragColor=vec4(c.rgb,1.0);
       }
     
+    
     block content
 
+    include ./components/modules/index-flip.pug
+
     script(src="./bootloader.bundle.js")
+    script(src='./vendor.bundle.js')
     script(src="./auth.bundle.js")

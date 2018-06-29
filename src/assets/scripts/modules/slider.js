@@ -3,14 +3,14 @@ import Vue from "vue";
 const info = {
   template: "#slider__info",
   props: {
-    work:Object
+    work: Object
   }
 };
 
 const display = {
   template: "#slider__display",
   props: {
-    work:Object
+    work: Object
   }
 };
 
@@ -27,12 +27,12 @@ const buttons = {
     getSlide(direction) {
       let worksArray = [...this.works];
       switch (direction) {
-        case 'prev':
+        case "prev":
           const lastSlide = this.works[this.works.length - 1];
           worksArray.unshift(lastSlide);
           worksArray.pop();
           break;
-        case 'next':
+        case "next":
           worksArray.push(worksArray[0]);
           worksArray.shift();
           break;
@@ -45,9 +45,9 @@ const buttons = {
 new Vue({
   el: "#slider-component",
   components: {
-      info,
-      display,
-      buttons
+    info,
+    display,
+    buttons
   },
   data: {
     works: [],
@@ -60,7 +60,8 @@ new Vue({
   },
   methods: {
     handleSlide(direction) {
-      this.currentSlide = direction === "next" ? ++this.currentSlide : --this.currentSlide;
+      this.currentSlide =
+        direction === "next" ? ++this.currentSlide : --this.currentSlide;
       if (this.currentSlide > this.works.length - 1) {
         this.currentSlide = 0;
       } else if (this.currentSlide < 0) {
@@ -68,7 +69,6 @@ new Vue({
       }
       this.currentWork = this.works[this.currentSlide];
       console.log(this.currentSlide);
-      
     }
   },
   template: "#slider"
