@@ -11,8 +11,7 @@ const parallax = (function() {
       let style = block.style;
 
       let strafe = -(scrollAmount / speedCoef) + "%";
-      style.transform = "translateY(" + strafe + ")";
-
+      style.transform = `translate3d(0, ${strafe}, 0)`;
     },
 
     init(wScroll) {
@@ -22,7 +21,7 @@ const parallax = (function() {
   };
 })();
 
-if (!isMobile) {
+if (!isMobile || window.innerWidth > 768) {
   window.addEventListener("scroll", () => {
     let wScroll = window.pageYOffset;
 

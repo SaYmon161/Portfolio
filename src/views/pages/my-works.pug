@@ -16,27 +16,7 @@ block content
       .works__title-block
           h1.block-title.works__title Мои работы
           +icon('works_header', 'works__title-svg')
-      .slider
-        .slider__info
-          h2.slider__title.block-subtitle Сайт школы онлайн обучения
-          span.slider__skills HTML, CSS, JAVASCRIPT
-          a.slider__info-btn(href="#")
-            +icon('link', 'slider__info-btn-svg')
-            span.slider__info-btn-text Посмотреть сайт
-        .slider__main
-          .slider__pic-wrap
-            +image('userfiles/loftschool.png', "loftschool", "slider__big-pic")
-        .slider__buttons
-          .slider__container
-            a.slider__prev.slider__btn(href="#")
-              +icon('portf_arrow_down', 'slider__prev-svg')
-            .slider__pic-wrap
-              +image('userfiles/loftschool.png', "loftschool", "slider__small-pic")
-          .slider__container
-            a.slider__next.slider__btn(href="#")
-              +icon('portf_arrow_up', 'slider__next-svg')
-            .slider__pic-wrap
-              +image('userfiles/loftschool.png', "loftschool", "slider__small-pic")
+      #slider-component
   section.feedback
     .works__title-block.feedback__title
       h1.block-title.works__title.review__title что обо мне говорят

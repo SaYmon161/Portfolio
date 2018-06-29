@@ -13,10 +13,10 @@ container = document.getElementById("container");
 
 init();
 animate();
-//if (!isMobile) {
-//} else {
+// if (!isMobile) {
+// } else {
 //  container.classList.add("index-mobile");
-//}
+// }
 
 
 function init() {

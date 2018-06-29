@@ -1,5 +1,5 @@
 .fullscreen-menu#fullscreen-menu(:class="{'fullscreen-menu--active' : changed}")
-  button(type="button" @click="openMenu" class="hamburger hamburger--vortex" :class="{'is-active' : changed}")
+  button(type="button" @click="changed = !changed" class="hamburger hamburger--vortex" :class="{'is-active' : changed}")
     span.hamburger-box
       span.hamburger-inner
   .fullscreen-menu__container

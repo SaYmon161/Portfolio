@@ -8,6 +8,9 @@
   @include tablets {
     width: 100%;
   }
+  @include mobileL {
+    padding: 0 10px;
+  }
 }
 
 .about-left__container {

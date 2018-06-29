@@ -12,15 +12,15 @@ const skill = {
       const dashOffset = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
       );
-
       const percent = (dashOffset * (100 - this.skillPercent)) / 100;
       const opacity = parseInt(
         getComputedStyle(circle).getPropertyValue("opacity")
       );
       const opacityValue = ((1 - opacity) * this.skillPercent) / 100 + opacity;
+      const skillRow = this.$root.$refs["skillList"];
       window.addEventListener("scroll", () => {
-        const posTop = circle.getBoundingClientRect().top.toFixed();
-        if (posTop <= window.innerHeight / 2) {
+        const posTop = skillRow.getBoundingClientRect().top.toFixed(10);
+        if (posTop <= 300) {
           circle.style.opacity = opacityValue;
           circle.style.strokeDashoffset = percent;
         }
@@ -28,7 +28,6 @@ const skill = {
     }
   },
   mounted() {
-    console.log(this.$parent.$parent);
     this.drawCircle();
   }
 };

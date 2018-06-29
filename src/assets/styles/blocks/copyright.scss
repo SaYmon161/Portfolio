@@ -11,7 +11,7 @@
   font-weight: 300;
 
   @include mobileL {
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
   }
 }
@@ -19,6 +19,8 @@
 .copyright__item {
   display: flex;
   margin-right: 10px;
+  text-align: center;
+  white-space: nowrap;
   &:last-child {
     margin-right: 0;
   }
@@ -31,10 +33,23 @@
     display: none;
   }
 
+  @include tablets {
+    margin-right: 5px;
+    font-size: 14px;
+    &:after {
+      margin-left: 5px;
+    }
+  }
+
   @include mobileL {
+    font-size: 16px;
     flex-grow: 0.5;
     justify-content: center;
     margin-right: 0;
+    
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -43,8 +58,5 @@
     flex-grow: 1;
     text-align: center;
     margin-right: 0;
-    &::after {
-      display: none;
-    }
   }
 }
