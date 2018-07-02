@@ -1,5 +1,6 @@
 .error {
   position: absolute;
+  transform: translateX(-50%);
   padding: 5px 10px;
   background-color: #e44845;
   color: $white;
@@ -17,5 +18,33 @@
     transform: translate(-50%, -50%) rotate(-45deg);
     background-color: #e44845;
     z-index: 119;
+  }
+}
+
+.error-enter-active, .error-leave-active {
+  transition: opacity 1s;
+}
+
+.error-enter-active {
+  transform: translateX(-50%);
+  opacity: 1;
+  animation: pulse 1s;
+}
+
+.error-leave-active {
+  opacity: 0;
+}
+
+@keyframes pulse {
+  from {
+    transform: translateX(-50%) scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: translateX(-50%) scale3d(1, 1, 1);
   }
 }

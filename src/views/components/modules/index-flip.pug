@@ -34,12 +34,14 @@ script(type="text/x-template")#side-b
         input(v-model="login" class="auth-form__input" id="login" type="text" placeholder="Логин")
         .auth-form__ico-wrap
           +icon("login", "auth-form__input-svg")
-        .error.auth-form__error(v-if="!validLogin")  {{ errorText }}      
+        transition(name="error")
+          .error.auth-form__error(v-if="!validLogin")  {{ errorText }}      
       label(class="auth-form__input-label" for="password")
         input(v-model="pass" class="auth-form__input" id="password" type="password" placeholder="Пароль")
         .auth-form__ico-wrap
           +icon("password", "auth-form__input-svg")
-        .error.auth-form__error(v-if="!validPass") {{ errorText }}
+        transition(name="error")
+          .error.auth-form__error(v-if="!validPass") {{ errorText }}
       label(class="auth-form__check-label" for="human-check")
         input(class="auth-form__check" id="human-check" type="checkbox")
         .auth-form__check-block
