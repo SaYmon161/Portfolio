@@ -30,9 +30,17 @@
   width: 20%;
   text-align: right;
   margin-right: 10%;
+  padding-top: 20px;
   @include tablets {
     display: none;
   }
+}
+
+.blog__list--fixed {
+  position: fixed;
+  width: 19%;
+  top: 0;
+  padding-top: 20px;
 }
 
 .blog__item {

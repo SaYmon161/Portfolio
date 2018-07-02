@@ -3,8 +3,10 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 100%;
+  z-index: 140;
   background: url("/assets/images/preloader/forest_prel_bg.jpg") center / cover;
+  transition: top 1s linear;
 }
 
 .preloader__pic {
@@ -46,4 +48,8 @@
   100% {
     stroke-dashoffset: -98;
   }
+}
+
+.hide {
+  top: -100%
 }

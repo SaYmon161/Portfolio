@@ -4,6 +4,45 @@ const info = {
   template: "#slider__info",
   props: {
     work: Object
+  },
+  methods: {
+    callback(eventName) {
+      console.log(eventName);
+    },
+    skillsAnimate(el, done) {
+      const sentence = el.innerText.trim();
+      const splitSpan = sentence
+        .split("")
+        .map(function(item) {
+          return `
+            <span class="${item === " " ? "whitespace" : ""}">${item}</span>
+          `;
+        })
+        .join("");
+      el.innerHTML = splitSpan;
+
+      const words = Array.from(el.children);
+
+      let i = 0;
+      function animate(words) {
+        const currentLetter = words[i];
+
+        let timer = setTimeout(() => {
+          animate(words);
+        }, 20);
+
+        currentLetter.classList.add("animated-flip");
+
+        i++;
+
+        if (i >= words.length) {
+          clearTimeout(timer);
+          done();
+        }
+      }
+
+      animate(words);
+    }
   }
 };
 

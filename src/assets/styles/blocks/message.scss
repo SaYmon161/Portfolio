@@ -41,6 +41,18 @@
   }
 }
 
+.message__input-wrap {
+  position: relative;
+}
+
+.message__error {
+  bottom: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 380px;
+  min-width: 250px;
+}
+
 .message__form-row {
   width: 100%;
 }

@@ -9,6 +9,7 @@
 
 .auth-form__input-label {
   display: flex;
+  position: relative;
 }
 
 .auth-form__ico-wrap {
@@ -44,6 +45,14 @@
   &:focus + .auth-form__ico-wrap .auth-form__input-svg {
     fill: $green;
   }
+}
+
+.auth-form__error {
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 380px;
+  min-width: 250px;
 }
 
 .auth-form__check-label {

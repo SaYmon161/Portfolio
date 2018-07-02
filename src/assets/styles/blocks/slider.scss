@@ -28,26 +28,36 @@
 }
 
 .slider__title {
+  min-height: 80px;
   width: 76%;
   margin-bottom: 4%;
 
   @include tablets {
     font-size: 30px;
-    margin-bottom: 1%;
   }
 }
 
 .slider__skills {
   display: block;
   color: $darkgreen;
-  text-align: center;
   font-weight: 500;
-  margin-bottom: 10%;
   text-transform: uppercase;
-
-  @include tablets {
-    margin-bottom: 3%;
+  font-size: 0;
+  min-height: 25px;
+  text-align: center;
+  
+  span {
+    font-size: 16px;
+    display: inline-block;
+    
+    &.whitespace:after {
+      content: "\00a0"
+    }
   }
+}
+
+.slider__skills-wrap {
+  min-height: 45px;
 }
 
 .slider__info-btn-svg {
@@ -163,11 +173,11 @@
 }
 
 .slider__small-pic {
-  max-width: 60%;
+  max-width: 40%;
   max-height: 90%;
 
   @include tablets {
-    width: 60%;
+    max-width: 40%;
   }
 }
 
@@ -297,5 +307,86 @@
   to {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+.title-leave-active {
+  animation: flipOutX .4s;
+}
+
+.title-enter-active {
+  animation: flipInX .4s;
+}
+
+@keyframes flipOutX {
+  from {
+    transform: perspective(400px);
+  }
+
+  30% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.animated-flip {
+  animation: anim-flip .8s;
+}
+
+@keyframes anim-flip {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    transform: perspective(400px);
+    animation-timing-function: ease-in;
   }
 }

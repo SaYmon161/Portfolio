@@ -42,14 +42,18 @@ block content
                 strong Владимир Сабанцев
                 br
                 | — преподаватель
-        .message
+        .message#message
           form.message__form(action="")
             h2.message__title.block-subtitle Связаться со мной
-            input(type="text" class= "message__input" placeholder = "Имя" id = "username" name = "username")
-            input(type="text" class= "message__input" placeholder = "Email" id = "email" name = "email")
-            textarea(name="message", cols="30", rows="10" class= "message__textarea" placeholder = "Ваше сообщение")
+            .message__input-wrap
+              input(v-model="name" type="text" class= "message__input" placeholder = "Имя" id = "username" name = "username")
+              .error.message__error(v-if="!validName") {{ errorText }}
+            .message__input-wrap            
+              input(v-model="email" type="text" class= "message__input" placeholder = "Email" id = "email" name = "email")
+              .error.message__error(v-if="!validEmail") {{ errorText }}
+            textarea(v-model="message" name="message", cols="30", rows="10" class= "message__textarea" placeholder = "Ваше сообщение")
             .message__form-row
-              button(type = "submit" class = "message__btn") Отправить
+              button(type = "submit" class = "message__btn" @click.prevent="submit") Отправить
               button(type = "reset" class = "message__btn") Очистить
         a.feedback__arrow-up(href = "#")
           +icon('portf_arrow_up', 'feedback__arrow-up-svg')
