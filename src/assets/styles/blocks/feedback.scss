@@ -1,5 +1,17 @@
 .feedback__content {
-  background: url(./assets/images/background/review-bg.png) center / cover;
+  background: url(./assets/images/background/review-bg-min.png) center / cover;
+
+  @include tablets {
+    background: url(./assets/images/background/review-bg-768.png) center / cover;
+  }
+
+  @include mobileL {
+    background: url(./assets/images/background/review-bg-425.png) center / cover;
+  }
+
+  @include retina {
+    background: url(./assets/images/background/review-bg.png) center / cover;
+  }
 }
 
 .feedback {
@@ -16,6 +28,23 @@
     display: block;
     height: 185px;
   }
+
+  @include tablets {
+    width: 95%;
+    &::after {
+      height: 275px;
+    }
+  }
+
+  @include mobileL {
+    &:after {
+      height: 390px;
+    }
+  }
+}
+
+.feedback__title {
+  margin-bottom: 20px;
 }
 
 .feedback__arrow-up {

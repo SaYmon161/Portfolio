@@ -1,0 +1,9 @@
+.index-mobile {
+  @include tablets {
+    background: url(./assets/images/header/water-768.jpg) center / cover;
+  }
+  
+  @include mobileL {
+    background: url(./assets/images/header/water-425.jpg) center / cover;
+  }
+}

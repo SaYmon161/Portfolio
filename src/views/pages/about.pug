@@ -11,44 +11,29 @@ block content
   +hero('about')
   section.about
     .about-left
-      +icon('triangle_left', 'triangle about-left__triangle')
-      .about-left__title-block
-          h2.block-title.about-left__title Обо мне
-          +icon('about_header', 'about-left__title-svg')
-      .about-left__content
-        .about-left__pic-wrap
-          +image('avatars/my-avatar.jpg', 'Мое фото', 'about-left__image')
-        .about-left__description
-          .about-left__description-title
-            h3.block-subtitle Кто я
-          .about-left__.about-left__description-text
-            p Я веб разработчик из Ростовa-на-Дону. Мне 30 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      +icon('triangle_left', 'triangle about-left__triangle about-left__triangle--left')
+      +icon('triangle_right', 'triangle about-left__triangle about-left__triangle--right')
+      .about-left__container
+        .about-left__title-block
+            h2.block-title.about-left__title Обо мне
+            +icon('about_header', 'about-left__title-svg')
+        .about-left__content
+          .about-left__pic-wrap
+            +image('avatars/my-avatar.jpg', 'Мое фото', 'about-left__image')
+          .about-left__description
+            .about-left__description-title
+              h3.block-subtitle Кто я
+            .about-left__.about-left__description-text
+              p Я веб разработчик из Ростовa-на-Дону. Мне 30 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
     .about-right
       +icon('triangle_right', 'triangle about-right__triangle')
       h2.block-subtitle.about-right__title Чем я могу быть вам полезен
       .about-right__description
         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about-right__content
-        .skills  
-          - 
-            var skills = [
-              ['Frontend', [['HTML5', 95], ['CSS3', 90], ['Javascript', 90]]],
-              ['Backend', [['PHP', 20], ['MySQL', 10], ['Node.js & npm', 50], ['MongoDB', 10]]],
-              ['Workflow', [['Git', 80], ['Gulp', 70], ['Yarn', 60]]]
-            ]
-          ul.skills__list
-            each skillsrow in skills
-              li.skills__item.skills-row
-                .skills__title #{skillsrow[0]}
-                ul.skills-row__list
-                  each skill in skillsrow[1]
-                    li.skills-row__item
-                      figure.skill
-                        svg(viewBox = '0 0 100 100' preserveAspectRatio='none').skill__figure
-                          circle(cx = '50' cy = '50' r = '40').skill__circle.skill__circle--under
-                          circle(cx = '50' cy = '50' r = '40' stroke-dashoffset = skill[1]).skill__circle.skill__circle--above
-                        .skill__title #{skill[0]}
+        #skills-container
+        
   section.map
     .map__data
       .contacts

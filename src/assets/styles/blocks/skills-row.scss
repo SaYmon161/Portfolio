@@ -1,0 +1,36 @@
+.skills-row  {
+  @include tablets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.skills-row__list {
+  display: flex;
+  flex-wrap: wrap;
+  
+
+  @include tablets {
+    width: 70%;
+    justify-content: space-around;
+    align-items: stretch
+  }
+
+  @include mobileL {
+  }
+}
+
+.skills-row__item {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  &:last-child {
+    margin-right: 0;
+  }
+  @include tablets {
+    margin-right: 0;
+  }
+}

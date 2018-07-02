@@ -6,12 +6,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include tablets {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  @include mobileL {
+    padding: 0 10px;
+  }
 }
 
 .about-right__triangle {
   fill: $white;
   left: 0;
   width: 100%;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.about-left__triangle--left {
+  @include tablets {
+    width: 50%;
+    left: 0;
+  }
+}
+
+.about-left__triangle--right {
+  display: none;
+  @include tablets {
+    display: block;
+    width: 50%;
+    right: 0;
+  }
 }
 
 .about-right__title {
@@ -24,18 +53,13 @@
 }
 
 .about-right__content {
-  align-self: flex-start
-}
+  align-self: flex-start;
 
-.skills__item {
-  margin-bottom: 30px;
-  &:last-child {
-    margin-bottom: 0;
+  @include tablets {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-.skills__title {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 20px;
 }

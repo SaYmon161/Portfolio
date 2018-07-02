@@ -1,5 +1,13 @@
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
 .welcome-page {
-  background: url(./assets/images/background/forest-bg.jpg) center center / cover;
   height: 100%;
   color: white;
   display: flex;
@@ -9,10 +17,23 @@
   padding-top: 2.6%;
   padding-right: 5.5%;
   padding-bottom: 4.4%;
+
+  @include tablets {
+    padding-left: 5.5%;
+  }
+
+  @include mobileL {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .welcome__wrapper {
-  height: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .welcome-page__content {
@@ -45,6 +66,7 @@
 }
 
 .welcome-page__auth-title {
+  margin-bottom: 20px;
   &:after {
     background: $white;
   }
@@ -58,6 +80,10 @@
   &:hover {
     background-color: $darkgreen;
     border-color: $green;
+  }
+
+  @include mobileL {
+    align-self: center;
   }
 }
 

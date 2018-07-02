@@ -5,6 +5,10 @@
   color: white;
 }
 
+.user__avatar {
+  margin-bottom: 30px;
+}
+
 .user__pic-wrap {
   width: 150px;
   height: 150px;
@@ -31,6 +35,14 @@
   @include roboto;
   font-weight: 400;
   color: #babdbc;
+  
+}
+
+.user__blog-text {
+  @include roboto;
+  font-weight: 400;
+  color: #babdbc;
+  
 }
 
 .user__blog-title {
@@ -38,4 +50,13 @@
     background: #fff;
   }
   margin-bottom: 35px;
+
+  @include tablets {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  @include mobileL {
+    font-size: 40px;
+  }
 }

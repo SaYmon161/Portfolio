@@ -24,6 +24,9 @@
 .skill__circle--above {
   stroke: $darkgreen;
   stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  opacity: 0.3;
+  transition: opacity, stroke-dashoffset .5s linear;
 }
 
 .skill__title {
