@@ -1,16 +1,17 @@
 script(type="text/x-template")#welcome-page
-  .welcome-page
-    .welcome-page__header
-      transition(name="fade")
-        authBtn(
-          @side-change="handleSideChange"
-          :activeSide="activeSide"
-          v-if="activeSide === 'sideA'"
-          )
-    .welcome-page__content
-      transition(name="flip" mode="out-in")
-        component(:is="activeSide" @side-change="handleSideChange")
-    include ../../common/copyright
+  .wrapper.welcome__wrapper
+    .welcome-page(@click="outOfForm")
+      .welcome-page__header
+        transition(name="fade")
+          authBtn(
+            @side-change="handleSideChange"
+            :activeSide="activeSide"
+            v-if="activeSide === 'sideA'"
+            )
+      .welcome-page__content
+        transition(name="flip" mode="out-in")
+          component(:is="activeSide" @side-change="handleSideChange")
+      include ../../common/copyright
   
 script(type="text/x-template")#auth-btn
   .auth-btn

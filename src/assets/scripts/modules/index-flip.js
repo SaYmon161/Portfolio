@@ -16,7 +16,7 @@ const sideB = {
   data() {
     return {
       errorText: "Поле не может быть пустым!",
-      name: "",
+      login: "",
       pass: "",
       validLogin: "true",
       validPass: "true"
@@ -61,6 +61,14 @@ new Vue({
   methods: {
     handleSideChange() {
       this.activeSide = this.activeSide === "sideA" ? "sideB" : "sideA";
+    },
+    outOfForm(e) {
+      if (
+        e.target.classList.contains("welcome-page") &&
+        this.activeSide === "sideB"
+      ) {
+        this.handleSideChange();
+      }
     }
   },
   template: "#welcome-page"
