@@ -2,10 +2,21 @@
   height: 160px;
   position: absolute;
   top: -160px;
-   @include mobileL {
-     height: 40px;
-     top: -40px;
-   }
+   
+  @include laptopL {
+    height: 110px;
+    top: -110px;
+  }
+
+  @include tablets {
+    height: 60px;
+    top: -60px;
+  }
+
+  @include mobileL {
+    height: 40px;
+    top: -40px;
+  }
 }
 
 .triangle--twoside {

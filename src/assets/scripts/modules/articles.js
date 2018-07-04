@@ -65,7 +65,7 @@ window.addEventListener("scroll", e => {
   checkCurrentArticle();
 });
 
-document.addEventListener("click", e => {
+blogList.addEventListener("click", e => {
   e.preventDefault();
   if (e.target.classList.contains("blog__link")) {
     toArticle(e.target.getAttribute("data-name"));

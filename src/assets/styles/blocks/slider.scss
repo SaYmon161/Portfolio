@@ -11,7 +11,6 @@
 
 .slider__info {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   order: 1;
@@ -27,14 +26,27 @@
   }
 }
 
+.slider__info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 37%;
+}
+
 .slider__title {
   min-height: 80px;
-  width: 76%;
-  margin-bottom: 4%;
+  width: 60%;
+  margin-bottom: 2.5%;
 
   @include tablets {
     font-size: 30px;
   }
+}
+
+.slider__skills-wrap {
+  margin-bottom: 54px;
 }
 
 .slider__skills {
@@ -56,9 +68,6 @@
   }
 }
 
-.slider__skills-wrap {
-  min-height: 45px;
-}
 
 .slider__info-btn-svg {
   width: 20px;
@@ -367,26 +376,29 @@
 @keyframes anim-flip {
   from {
     transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    opacity: 1;
     animation-timing-function: ease-out;
   }
 
   40% {
-    transform: perspective(400px) rotate3d(0, 1, 0, -190deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
     animation-timing-function: ease-out;
   }
 
   50% {
     transform: perspective(400px) rotate3d(0, 1, 0, -170deg);
+    opacity: 0;
     animation-timing-function: ease-in;
   }
 
-  80% {
-    transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+  60% {
+    transform: perspective(400px)rotate3d(0, 1, 0, -180deg);
     animation-timing-function: ease-in;
   }
 
   to {
-    transform: perspective(400px);
-    animation-timing-function: ease-in;
+    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    opacity: 1;
+    animation-timing-function: ease-out;
   }
 }

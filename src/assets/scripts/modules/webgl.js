@@ -1,3 +1,5 @@
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from "constants";
+
 var container;
 var camera, scene, renderer;
 var uniforms;
@@ -48,6 +50,7 @@ function init() {
   onWindowResize();
   window.addEventListener("resize", onWindowResize, false);
 }
+
 function onWindowResize(event) {
   renderer.setSize(window.innerWidth, window.innerHeight);
   uniforms.u_resolution.value.x = renderer.domElement.width;
@@ -55,10 +58,12 @@ function onWindowResize(event) {
   uniforms.u_mouse.value.x = mouse.x;
   uniforms.u_mouse.value.y = mouse.y;
 }
+
 function animate() {
   requestAnimationFrame(animate);
   render();
 }
+
 function render() {
   uniforms.u_time.value += 1.0;
   renderer.render(scene, camera);

@@ -1,8 +1,4 @@
 .skills__item {
-  margin-bottom: 30px;
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   @include tablets {
     display: flex;
@@ -15,7 +11,7 @@
 .skills__title {
   font-size: 28px;
   font-weight: 500;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .skills__list {

@@ -2,10 +2,17 @@
   width: 380px;
   height: 460px;
   background: rgba($white, 0.7);
-  padding-top: 30px;
+  padding-top: 25px;
   border-radius: 5px;
   margin-bottom: 70px;
   overflow: hidden;
+}
+
+.message__title {
+  margin-bottom: 10px;
+  &::after {
+    margin-top: 15px;
+  }
 }
 
 .message__form {
@@ -18,8 +25,7 @@
 
 .message__input {
   width: 340px;
-  height: 45px;
-  padding: 25px 20px;
+  padding: 13px 20px;
   border: 0;
   border-radius: 22px;
   &::placeholder {

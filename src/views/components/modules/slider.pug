@@ -14,17 +14,18 @@ script(type="text/x-template")#slider
   
 script(type="text/x-template")#slider__info
   .slider__info
-    transition(name="title" mode="out-in")
-      h2.slider__title.block-subtitle(:key="work.title") {{work.title}}
-    transition-group(
-      appear
-      :css="false"
-      @enter="skillsAnimate"
-      ).slider__skills-wrap
-      span.slider__skills(:key="work.skills") {{work.skills}}
-    a.slider__info-btn(:href="work.link" target="_blank")
-      +icon('link', 'slider__info-btn-svg')
-      span.slider__info-btn-text Посмотреть сайт
+    .slider__info-content
+      transition(name="title" mode="out-in")
+        h2.slider__title.block-subtitle(:key="work.title") {{work.title}}
+      transition-group(
+        appear
+        :css="false"
+        @enter="skillsAnimate"
+        ).slider__skills-wrap
+        span.slider__skills(:key="work.skills") {{work.skills}}
+      a.slider__info-btn(:href="work.link" target="_blank")
+        +icon('link', 'slider__info-btn-svg')
+        span.slider__info-btn-text Посмотреть сайт
 
 script(type="text/x-template")#slider__display
   .slider__display
