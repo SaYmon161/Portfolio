@@ -89,6 +89,10 @@
   @include tablets {
     width: 95%;
   }
+
+  @include mobileL {
+    width: 100%;
+  }
 }
 
 .footer__content {

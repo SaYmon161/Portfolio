@@ -93,12 +93,34 @@
   @include tablets {
     display: none;
   }
+
+  @include mobileL {
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 135;
+    background-color: $green;
+    width: 285px;
+  }
 }
 
 .blog__list {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @include mobileL {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 285px;
+    background-color: $green;
+    justify-content: center;
+    padding-right: 20px;
+    z-index: 136;
+    transition: left 0.8s linear;
+  }
 }
 
 .blog__list--fixed {
@@ -111,6 +133,13 @@
   @include laptopL {
     right: 73.9%;
     width: 29%;
+  }
+
+  @include mobileL {
+    right: unset;
+    width: unset;
+    width: 285px;
+    left: -285px;
   }
 }
 
@@ -131,6 +160,14 @@
     background: $green;
     display: flex;
     opacity: 0;
+
+    @include mobileL {
+      display: none;
+    }
+  }
+
+  @include mobileL {
+    color: $white
   }
 }
 
@@ -139,6 +176,28 @@
   &:after {
     content: '';
     opacity: 1;
+  }
+
+  @include mobileL {
+    color: $white;
+    font-weight: 800;
+  }
+}
+
+.blog__pull-tag {
+  display: none;
+
+  @include mobileL {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: -40px;
+    background-color: $green;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 130;
+    transition: left 0.8s linear;
   }
 }
 

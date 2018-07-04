@@ -1,6 +1,8 @@
 const blogList = document.querySelector(".blog__list");
 const articles = document.querySelectorAll(".article");
 const links = document.querySelectorAll(".blog__link");
+const pullTag = document.querySelector(".blog__pull-tag");
+let menuOpened = false;
 
 links[0].parentElement.classList.add("blog__item--active");
 
@@ -13,7 +15,7 @@ function fixed() {
 function checkCurrentArticle() {
   for (let i = 0; i < articles.length; i++) {
     if (
-      articles[i].getBoundingClientRect().y < 200 &&
+      articles[i].getBoundingClientRect().y < 300 &&
       articles[i].getBoundingClientRect().y >
         -articles[i].getBoundingClientRect().height &&
       articles[i].getAttribute("data-name") ===
@@ -69,5 +71,16 @@ blogList.addEventListener("click", e => {
   e.preventDefault();
   if (e.target.classList.contains("blog__link")) {
     toArticle(e.target.getAttribute("data-name"));
+  }
+});
+
+pullTag.addEventListener("click", e => {
+  menuOpened = !menuOpened;
+  if (!menuOpened) {
+    pullTag.style.left = "212px";
+    blogList.style.left = "0";
+  } else {
+    pullTag.style.left = "";
+    blogList.style.left = "";
   }
 });
