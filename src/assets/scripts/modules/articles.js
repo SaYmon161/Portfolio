@@ -72,15 +72,26 @@ blogList.addEventListener("click", e => {
   if (e.target.classList.contains("blog__link")) {
     toArticle(e.target.getAttribute("data-name"));
   }
+  closeMenu();
 });
 
+function openMenu() {
+  pullTag.style.left = "212px";
+  blogList.style.left = "0";
+  menuOpened = true;
+}
+
+function closeMenu() {
+  pullTag.style.left = "";
+  blogList.style.left = "";
+  menuOpened = false;
+}
+
 pullTag.addEventListener("click", e => {
-  menuOpened = !menuOpened;
   if (!menuOpened) {
-    pullTag.style.left = "212px";
-    blogList.style.left = "0";
+    openMenu();
   } else {
-    pullTag.style.left = "";
-    blogList.style.left = "";
+    closeMenu();
   }
+  console.log(menuOpened);
 });
