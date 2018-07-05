@@ -15,7 +15,6 @@ new Vue({
   methods: {
     submit() {
       const regexp = /@/;
-
       if (!this.name || this.name === "") {
         this.validName = false;
         this.errorText = "Поле не может быть пустым!";
