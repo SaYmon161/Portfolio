@@ -1,11 +1,7 @@
-.fullscreen-menu__container {
-  //display: none;
-}
-
 .fullscreen-menu__list {
   position: absolute;
-  display: none;
-  top: 0;
+  display: flex;
+  top: -100%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -14,10 +10,10 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  transition: top 0.4s 0.3s linear;
 }
 
 .fullscreen-menu__right {
-  //display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -31,7 +27,6 @@
 
 
 .fullscreen-menu__left{
-  //display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -45,14 +40,12 @@
 
 .fullscreen-menu--active {
   .fullscreen-menu__list{
-    display: flex;
+    top: 0;
   }
   .fullscreen-menu__right {
-    //display: block;
     left: 50%;
   }
   .fullscreen-menu__left {
-    //display: block;
     right: 50%;
   }
 }
