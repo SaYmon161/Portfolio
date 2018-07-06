@@ -4,7 +4,19 @@
   margin-bottom: 70px;
 
   @include mobileL {
+    align-items: center;
     flex-direction: column;
+  }
+}
+
+.review__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:after {
+    margin-top: 38px;
   }
 }
 
@@ -23,7 +35,7 @@
   }
 
   @include mobileL {
-    margin-right: 0;;
+    margin-right: 0;
   }
 }
 
@@ -32,7 +44,7 @@
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .review__blockquote {
@@ -55,5 +67,5 @@
 .review__blockquote p {
   font-style: italic;
   color: $grey;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }

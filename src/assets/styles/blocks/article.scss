@@ -1,4 +1,6 @@
 .article {
+  width: 85%;
+  padding-left: 5px;
   margin-bottom: 50px;
   &::after {
     content: '';
@@ -17,7 +19,7 @@
   @include webissimo;
   font-weight: 700;
   font-size: 35px;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 
   @include tablets {
     font-size: 32px;
@@ -27,9 +29,13 @@
 .article span {
   color: $green;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .article p {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.article img {
+  width: 100%
 }

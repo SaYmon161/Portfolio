@@ -4,16 +4,21 @@
 }
 
 .socials__item {
-  margin-right: 20px;
+  margin-right: 25px;
+
+  @include laptopL {
+    margin-right: 35px;
+  }
 }
 
 .socials__svg {
-  width: 26px;
-  height: 23px;
+  width: 26Px;
+  height: 23Px;
   fill: rgba(#fff, .5);
   &:hover {
       fill: $green;
   }
+  
 }
 
 .socials--footer .socials__svg {

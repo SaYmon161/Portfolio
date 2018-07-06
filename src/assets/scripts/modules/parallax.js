@@ -1,9 +1,5 @@
-const MobileDetect = require("mobile-detect");
-const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
-
 const parallax = (function() {
-  let bg = document.querySelector(".header__picture");
+  let bg = document.querySelector("picture");
   let heroContent = document.querySelector(".hero__content");
 
   return {
@@ -21,10 +17,17 @@ const parallax = (function() {
   };
 })();
 
-if (!isMobile || window.innerWidth > 768) {
-  window.addEventListener("scroll", () => {
-    let wScroll = window.pageYOffset;
+const scrollHandler = function() {
+  let wScroll = window.pageYOffset;
+  parallax.init(wScroll);
+};
 
-    parallax.init(wScroll);
-  });
+if (window.innerWidth > 768) {
+  window.addEventListener("scroll", scrollHandler);
 }
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 768) {
+    window.removeEventListener("scroll", scrollHandler);
+  }
+});

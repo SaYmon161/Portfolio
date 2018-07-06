@@ -1,22 +1,36 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
+  padding-left: 40px;
+  border-radius: 5px;
+  padding-top: 20px;
+
+  @include tablets {
+    padding-left: 25px;
+  }
 }
 
 .contacts__title {
+  padding-right: 20px;
   margin-bottom: 30px;
+  &::after {
+    margin-top: 17px;
+  }
   @include tablets {
     margin-bottom: 15px;
   }
+  
 }
 
 .contacts__item {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include tablets {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 }
 

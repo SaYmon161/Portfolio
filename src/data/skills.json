@@ -2,15 +2,15 @@
     {
       "skillsGroup": "Frontend",
       "skills": {
-        "html5": 30,
-        "css3": 50,
+        "HTML5": 30,
+        "CSS3": 50,
         "JavaScript & jQuery": 30
       }
     },
     {
       "skillsGroup": "Backend",
       "skills": {
-        "Php": 30,
+        "PHP": 30,
         "mySql": 60,
         "Node.js & npm": 30,
         "Mongo.db": 70

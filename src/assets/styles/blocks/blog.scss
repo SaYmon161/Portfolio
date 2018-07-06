@@ -5,6 +5,58 @@
   padding-top: 40px;
 }
 
+.blog__header.header {
+  height: 50vh;
+}
+
+.blog__header-img {
+  width: 100%;
+
+  @include tablets {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include mobileL{
+    width: unset;
+    height: 100%;
+  }
+}
+
+.blog__header-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+
+
+.blog__header-container  {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  @include laptopL {
+    margin-bottom: 15px;
+  }
+}
+
+.blog-user__pic-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+  @include laptopL {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 .blog__maincontent {
   &:after {
     content: '';
@@ -24,19 +76,78 @@
 
 .blog__container {
   display: flex;
+  padding-top: 15px;
 }
 
 .blog__aside-menu {
-  width: 20%;
+  position: relative;
+  width: 21%;
   text-align: right;
-  margin-right: 10%;
+  margin-right: 6%;
+  padding-top: 15px;
+  padding-left: 10px;
+
+  @include laptopL {
+    width: 25%;
+    margin-right: 8%;
+  }
+
   @include tablets {
     display: none;
+  }
+
+  @include mobileL {
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 135;
+    background-color: $green;
+    width: 285px;
+  }
+}
+
+.blog__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include mobileL {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 285px;
+    background-color: $green;
+    justify-content: center;
+    padding-right: 20px;
+    z-index: 136;
+    transition: left 0.8s linear;
+  }
+}
+
+.blog__list--fixed {
+  position: fixed;
+  top: 0;
+  padding-top: 20px;
+  width: 19%;
+  right: 77.9%;
+
+  @include laptopL {
+    right: 73.9%;
+    width: 29%;
+  }
+
+  @include mobileL {
+    right: unset;
+    width: unset;
+    width: 285px;
+    left: -285px;
   }
 }
 
 .blog__item {
-  margin-bottom: 45px;
+  width: 80%;
+  margin-bottom: 25px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -51,6 +162,14 @@
     background: $green;
     display: flex;
     opacity: 0;
+
+    @include mobileL {
+      display: none;
+    }
+  }
+
+  @include mobileL {
+    color: $white
   }
 }
 
@@ -59,6 +178,29 @@
   &:after {
     content: '';
     opacity: 1;
+  }
+
+  @include mobileL {
+    color: $white;
+    font-weight: 800;
+  }
+}
+
+.blog__pull-tag {
+  display: none;
+
+  @include mobileL {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: -40px;
+    background-color: $green;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 130;
+    transition: left 0.8s linear;
+    opacity: 0.8;
   }
 }
 
@@ -69,4 +211,3 @@
     width: 95%;
   }
 }
-

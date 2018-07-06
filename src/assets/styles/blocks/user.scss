@@ -3,10 +3,19 @@
   flex-direction: column;
   align-items: center;
   color: white;
+  width: 300px;
+
+  @include laptopL {
+    width: 350px;
+  }
 }
 
 .user__avatar {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+
+  @include tablets {
+    margin-bottom: 35px;
+  }
 }
 
 .user__pic-wrap {
@@ -15,6 +24,13 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+
+  // @include laptopL {
+  //   width: 140px;
+  //   height: 140px;
+  // }
+
+
 }
 
 .user__img {
@@ -29,6 +45,11 @@
   @include roboto;
   font-weight: 500;
   font-size: 28px;
+
+  @include laptopL {
+    
+    font-size: 32px;
+  }
 }
 
 .user__text {
@@ -51,10 +72,6 @@
   }
   margin-bottom: 35px;
 
-  @include tablets {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
 
   @include mobileL {
     font-size: 40px;

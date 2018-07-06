@@ -19,9 +19,8 @@
 
   @include tablets {
     top: calc(50vh - 275px/2);
-    width: 345px;
-    min-height: 290px;
-    padding-top: 30px;
+    padding-top: 10px;
+    min-height: 320px;
   }
 
   @include mobileL {

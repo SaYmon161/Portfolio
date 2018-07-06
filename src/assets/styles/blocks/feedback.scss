@@ -16,7 +16,7 @@
 
 .feedback {
   background: #f4f5f0;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .feedback__container {
@@ -43,8 +43,11 @@
   }
 }
 
-.feedback__title {
-  margin-bottom: 20px;
+.feedback__title-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
 }
 
 .feedback__arrow-up {

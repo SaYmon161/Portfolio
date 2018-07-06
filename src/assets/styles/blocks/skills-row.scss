@@ -13,7 +13,7 @@
   
 
   @include tablets {
-    width: 70%;
+    width: 75%;
     justify-content: space-around;
     align-items: stretch
   }
@@ -26,11 +26,12 @@
   width: 120px;
   height: 120px;
   margin-bottom: 30px;
-  margin-right: 20px;
+  margin-right: 40px;
   &:last-child {
     margin-right: 0;
   }
   @include tablets {
     margin-right: 0;
+    margin-bottom: 50px;
   }
 }

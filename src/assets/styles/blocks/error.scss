@@ -1,0 +1,48 @@
+.error {
+  position: absolute;
+  padding: 5px 10px;
+  background-color: #e44845;
+  color: $white;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 120;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 11px;
+    height: 11px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: #e44845;
+    z-index: 119;
+  }
+}
+
+.error-enter-active, .error-leave-active {
+  transition: opacity 1s;
+}
+
+.error-enter-active {
+  opacity: 1;
+  animation: pulse 1s;
+}
+
+.error-leave-active {
+  opacity: 0;
+}
+
+@keyframes pulse {
+  from {
+    transform: translateX(-50%) scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: translateX(-50%) scale3d(1, 1, 1);
+  }
+}

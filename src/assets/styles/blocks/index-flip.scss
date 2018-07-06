@@ -1,0 +1,49 @@
+.flip-enter-active {
+  animation-duration: 0.75s;
+  animation-name: flipInY;
+}
+
+.flip-leave-active {
+  animation-duration: 0.75s;
+  animation-name: flipOutY;
+}
+
+@keyframes flipInY {
+  from {
+    transform:  rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+  }
+
+  40% {
+    transform:  rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform:  rotate3d(0, 1, 0, 10deg);
+  }
+
+  to {
+    transform:  rotate3d(0, 1, 0, -5deg);
+  }
+}
+
+@keyframes flipOutY {
+  from {
+    transform:  rotate3d(0, 1, 0, 0);
+  }
+
+  to {
+    transform:  rotate3d(0, 1, 0, 90deg);
+  }
+}
+
+.flipOutY {
+  animation-duration: 0.75s;
+  animation-name: flipOutY;
+}
+
+.flipInY {
+  animation-duration: 0.75s;
+  animation-name: flipInY;
+}

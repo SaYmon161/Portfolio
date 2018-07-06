@@ -3,14 +3,53 @@ import Vue from "vue";
 const info = {
   template: "#slider__info",
   props: {
-    work:Object
+    work: Object
+  },
+  methods: {
+    callback(eventName) {
+      console.log(eventName);
+    },
+    skillsAnimate(el, done) {
+      const sentence = el.innerText.trim();
+      const splitSpan = sentence
+        .split("")
+        .map(function(item) {
+          return `
+            <span class="${item === " " ? "whitespace" : ""}">${item}</span>
+          `;
+        })
+        .join("");
+      el.innerHTML = splitSpan;
+
+      const words = Array.from(el.children);
+
+      let i = 0;
+      function animate(words) {
+        const currentLetter = words[i];
+
+        let timer = setTimeout(() => {
+          animate(words);
+        }, 20);
+
+        currentLetter.classList.add("animated-flip");
+
+        i++;
+
+        if (i >= words.length) {
+          clearTimeout(timer);
+          done();
+        }
+      }
+
+      animate(words);
+    }
   }
 };
 
 const display = {
   template: "#slider__display",
   props: {
-    work:Object
+    work: Object
   }
 };
 
@@ -27,12 +66,12 @@ const buttons = {
     getSlide(direction) {
       let worksArray = [...this.works];
       switch (direction) {
-        case 'prev':
+        case "prev":
           const lastSlide = this.works[this.works.length - 1];
           worksArray.unshift(lastSlide);
           worksArray.pop();
           break;
-        case 'next':
+        case "next":
           worksArray.push(worksArray[0]);
           worksArray.shift();
           break;
@@ -45,9 +84,9 @@ const buttons = {
 new Vue({
   el: "#slider-component",
   components: {
-      info,
-      display,
-      buttons
+    info,
+    display,
+    buttons
   },
   data: {
     works: [],
@@ -60,7 +99,8 @@ new Vue({
   },
   methods: {
     handleSlide(direction) {
-      this.currentSlide = direction === "next" ? ++this.currentSlide : --this.currentSlide;
+      this.currentSlide =
+        direction === "next" ? ++this.currentSlide : --this.currentSlide;
       if (this.currentSlide > this.works.length - 1) {
         this.currentSlide = 0;
       } else if (this.currentSlide < 0) {
@@ -68,7 +108,6 @@ new Vue({
       }
       this.currentWork = this.works[this.currentSlide];
       console.log(this.currentSlide);
-      
     }
   },
   template: "#slider"

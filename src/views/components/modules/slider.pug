@@ -14,26 +14,36 @@ script(type="text/x-template")#slider
   
 script(type="text/x-template")#slider__info
   .slider__info
-    h2.slider__title.block-subtitle {{work.title}}
-    span.slider__skills {{work.skills}}
-    a.slider__info-btn(:href="work.link" target="_blank")
-      +icon('link', 'slider__info-btn-svg')
-      span.slider__info-btn-text Посмотреть сайт
+    .slider__info-content
+      transition(name="title" mode="out-in")
+        h2.slider__title.block-subtitle(:key="work.title") {{work.title}}
+      transition-group(
+        appear
+        :css="false"
+        @enter="skillsAnimate"
+        ).slider__skills-wrap
+        span.slider__skills(:key="work.skills") {{work.skills}}
+      a.slider__info-btn(:href="work.link" target="_blank")
+        +icon('link', 'slider__info-btn-svg')
+        span.slider__info-btn-text Посмотреть сайт
 
 script(type="text/x-template")#slider__display
   .slider__display
-    .slider__pic-wrap
-      img(:src="work.photo", :alt="work.title").slider__big-pic
+    transition(name="display" mode="out-in")
+      .slider__pic-wrap(:key="work.photo")
+        img(:src="work.photo", :alt="work.title").slider__big-pic
   
 script(type="text/x-template")#slider__buttons
   .slider__buttons
     .slider__container
       a.slider__prev.slider__btn(href="#" @click.prevent="slide('prev')")
         +icon('portf_arrow_down', 'slider__prev-svg')
-      .slider__pic-wrap
-        img(:src="getSlide('prev').photo", alt="getSlide('prev').title").slider__small-pic
+      transition(name="slide-prev" mode="out-in")
+        .slider__pic-wrap(:key="getSlide('prev').photo")
+            img(:src="getSlide('prev').photo", alt="getSlide('prev').title").slider__small-pic
     .slider__container
       a.slider__next.slider__btn(href="#" @click.prevent="slide('next')")
         +icon('portf_arrow_up', 'slider__next-svg')
-      .slider__pic-wrap
-        img(:src="getSlide('next').photo", alt="getSlide('next').title").slider__small-pic
+      transition(name="slide-next" mode="out-in")
+        .slider__pic-wrap(:key="getSlide('next').photo")
+          img(:src="getSlide('next').photo", alt="getSlide('next').title").slider__small-pic

@@ -1,13 +1,13 @@
 mixin hero(modHero)
-  header.header
-    picture.header__picture
-      source(media="(-webkit-min-device-pixel-ratio: 1.5, min-resolution: 144dpi)", srcset="./assets/images/index/water.jpg").header__img
-      source(media="(min-width: 1920px)", srcset="./assets/images/header/water-min.jpg").header__img
-      source(media="(min-width: 769px)", srcset="./assets/images/header/water-1920.jpg").header__img
-      source(media="(min-width: 426px)", srcset="./assets/images/header/water-768.jpg").header__img
-      img(src="./assets/images/header/water-425.jpg").header__img
+  header.header(class= modHero === 'blog-hero' ? 'blog__header' : '')
+    picture(class= modHero === 'blog-hero' ? 'blog__header-picture' : 'header__picture')
+      source(media="(-webkit-min-device-pixel-ratio: 1.5, min-resolution: 144dpi)", srcset="./assets/images/index/water.jpg" class= modHero === 'blog-hero' ? 'blog__header-img' : 'header__img')
+      source(media="(min-width: 1920px)", srcset="./assets/images/header/water-min.jpg" class= modHero === 'blog-hero' ? 'blog__header-img' : 'header__img')
+      source(media="(min-width: 769px)", srcset="./assets/images/header/water-1920.jpg" class= modHero === 'blog-hero' ? 'blog__header-img' : 'header__img')
+      source(media="(min-width: 426px)", srcset="./assets/images/header/water-768.jpg" class= modHero === 'blog-hero' ? 'blog__header-img' : 'header__img')
+      img(src="./assets/images/header/water-425.jpg" class= modHero === 'blog-hero' ? 'blog__header-img' : 'header__img')
     .header__content
-      .container.header__container
+      .container(class= modHero === 'blog-hero' ? 'blog__header-container' : 'header__container')
         .header__left
           +socials('header__socials')
       section.hero
@@ -23,9 +23,5 @@ mixin hero(modHero)
                 +icon('blog_header', 'hero__title-svg')
               else
                 +icon('portfolio_header', 'hero__title-svg')
-          if modHero == 'blog-hero'
-            a.hero__link.hero__blog-link(href = '#')
-              +icon('arrow_down', 'hero__arrow-down-svg')
-          else
-            a.hero__link(href = '#')
-              +icon('arrow_down', 'hero__arrow-down-svg')
+          a.hero__link.arrow-scroll__link(class= modHero === 'blog-hero' ? 'hero__blog-link' : '', href = `#${modHero}`)
+            +icon('arrow_down', 'hero__arrow-down-svg')

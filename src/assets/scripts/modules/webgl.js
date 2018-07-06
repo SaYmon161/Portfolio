@@ -1,26 +1,20 @@
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from "constants";
 
 var container;
 var camera, scene, renderer;
 var uniforms;
 var mouse = { x: 0, y: 0 };
 var loader = new THREE.TextureLoader();
-//const MobileDetect = require("mobile-detect");
-//const mobileDetect = new MobileDetect(window.navigator.userAgent);
-//const isMobile = mobileDetect.mobile();
 container = document.getElementById("container");
 
-//console.log(isMobile);
-
-init();
-animate();
-// if (!isMobile) {
-// } else {
-//  container.classList.add("index-mobile");
-// }
-
+if (window.innerWidth > 768) {
+  init();
+  animate();
+} else {
+  container.classList.add("index-mobile");
+}
 
 function init() {
-
   camera = new THREE.Camera();
   camera.position.z = 1;
   scene = new THREE.Scene();
@@ -35,7 +29,10 @@ function init() {
     u_animation: { type: "f", value: 0.0 },
     u_mouse: { type: "v2", value: new THREE.Vector2() },
     u_resolution: { type: "v2", value: new THREE.Vector2() },
-    u_size: { type: "v2", value: new THREE.Vector2(MyTexture.width, MyTexture.height) },
+    u_size: {
+      type: "v2",
+      value: new THREE.Vector2(MyTexture.width, MyTexture.height)
+    },
     u_image: { value: MyTexture },
     u_maps: { value: mapTexture }
   };
@@ -53,6 +50,7 @@ function init() {
   onWindowResize();
   window.addEventListener("resize", onWindowResize, false);
 }
+
 function onWindowResize(event) {
   renderer.setSize(window.innerWidth, window.innerHeight);
   uniforms.u_resolution.value.x = renderer.domElement.width;
@@ -60,10 +58,12 @@ function onWindowResize(event) {
   uniforms.u_mouse.value.x = mouse.x;
   uniforms.u_mouse.value.y = mouse.y;
 }
+
 function animate() {
   requestAnimationFrame(animate);
   render();
 }
+
 function render() {
   uniforms.u_time.value += 1.0;
   renderer.render(scene, camera);
