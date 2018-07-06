@@ -1,5 +1,5 @@
 const parallax = (function() {
-  let bg = document.querySelector(".header__picture");
+  let bg = document.querySelector("picture");
   let heroContent = document.querySelector(".hero__content");
 
   return {
