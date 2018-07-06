@@ -59,5 +59,5 @@ script(type="text/x-template")#side-b
           .auth-form__custom-radio
           | Не уверен
       .auth-form__btn-row
-        button(type = "button" class = "auth-form__btn" @click="$emit('side-change')") На главную
-        button(@click.prevent="submit" type = "submit" class = "auth-form__btn") Войти
+        button(type = "button" @click="$emit('side-change')").auth-form__btn На главную
+        button(@click.prevent="submit" type = "submit").auth-form__btn Войти

@@ -153,3 +153,7 @@
     outline: none;
   }
 }
+
+.auth-form__btn--disabled {
+  background-color: $grey;
+}
