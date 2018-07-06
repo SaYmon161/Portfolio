@@ -7,3 +7,4 @@ document.addEventListener("DOMContentLoaded", e => {
 import "./modules/skills";
 import "./modules/fullscreen-menu";
 import "./modules/parallax";
+import "./modules/scroll-arrow";

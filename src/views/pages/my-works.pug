@@ -9,7 +9,7 @@ block scripts
 
 block content
   +hero('works')
-  section.works
+  section.works#works
     +icon('triangle_left', 'triangle triangle--twoside triangle--left works__triangle')
     +icon('triangle_right', 'triangle triangle--twoside triangle--right works__triangle')
     .works__content
@@ -57,6 +57,6 @@ block content
             .message__form-row
               button(type = "submit" class = "message__btn" @click.prevent="submit") Отправить
               button(type = "reset" class = "message__btn") Очистить
-        a.feedback__arrow-up(href = "#")
+        a.feedback__arrow-up.arrow-scroll__link(href = "#works")
           +icon('portf_arrow_up', 'feedback__arrow-up-svg')
 

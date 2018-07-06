@@ -23,5 +23,5 @@ mixin hero(modHero)
                 +icon('blog_header', 'hero__title-svg')
               else
                 +icon('portfolio_header', 'hero__title-svg')
-          a.hero__link(class= modHero === 'blog-hero' ? 'hero__blog-link' : '', href = '#')
+          a.hero__link.arrow-scroll__link(class= modHero === 'blog-hero' ? 'hero__blog-link' : '', href = `#${modHero}`)
             +icon('arrow_down', 'hero__arrow-down-svg')
