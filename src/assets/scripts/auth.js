@@ -5,4 +5,4 @@ document.addEventListener("DOMContentLoaded", e => {
 });
 
 import "./modules/webgl";
-import "./modules/index-flip";
+import "./modules/welcome-page";

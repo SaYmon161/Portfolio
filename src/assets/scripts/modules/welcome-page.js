@@ -16,15 +16,17 @@ const sideB = {
   data() {
     return {
       errorText: "Поле не может быть пустым!",
-      login: "",
-      pass: "",
+      user: {
+        name: "",
+        pass: ""
+      },
       validLogin: "true",
       validPass: "true"
     };
   },
   methods: {
     submit() {
-      if (!this.login || this.login === "") {
+      if (!this.user.name || this.user.name === "") {
         this.validLogin = false;
         this.errorText = "Поле не может быть пустым!";
       } else {
@@ -55,8 +57,10 @@ new Vue({
     sideB,
     authBtn
   },
-  data: {
-    activeSide: "sideA"
+  data() {
+    return {
+      activeSide: "sideA"
+    };
   },
   methods: {
     handleSideChange() {

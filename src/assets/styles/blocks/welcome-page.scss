@@ -50,7 +50,8 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  height: 100%;
+  width: 380px;
+  height: 395px;
   padding-top: 40px;
 }
 
@@ -62,7 +63,6 @@
 .welcome-page__auth {
   @extend .welcome-page__user;
   padding-top: 40px;
-
 }
 
 .welcome-page__auth-title {
