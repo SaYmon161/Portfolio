@@ -85,7 +85,8 @@ export default {
 .blog__content {
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
+  width: 50%;
+  margin-right: 10%;
 }
 
 .blog__description {
@@ -105,6 +106,7 @@ export default {
 }
 
 .blog__text {
+  resize: none;
   width: 500px;
   height: 166px;
   font-size: 16px;
@@ -125,5 +127,9 @@ export default {
   color: white;
   border-radius: 6px;
   font-weight: 500;
+}
+
+.blog__right-block {
+  width: 50%;
 }
 </style>

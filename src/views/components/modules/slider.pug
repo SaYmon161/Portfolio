@@ -22,7 +22,7 @@ script(type="text/x-template")#slider__info
         :css="false"
         @enter="skillsAnimate"
         ).slider__skills-wrap
-        span.slider__skills(:key="work.skills") {{work.skills}}
+          span.slider__skills(:key="work.techs") {{work.techs}}
       a.slider__info-btn(:href="work.link" target="_blank")
         +icon('link', 'slider__info-btn-svg')
         span.slider__info-btn-text Посмотреть сайт
@@ -31,7 +31,7 @@ script(type="text/x-template")#slider__display
   .slider__display
     transition(name="display" mode="out-in")
       .slider__pic-wrap(:key="work.photo")
-        img(:src="work.photo", :alt="work.title").slider__big-pic
+        img(:src=`http://webdev-api.loftschool.com/${work.photo}`, :alt="work.title").slider__big-pic
   
 script(type="text/x-template")#slider__buttons
   .slider__buttons
@@ -40,10 +40,10 @@ script(type="text/x-template")#slider__buttons
         +icon('portf_arrow_down', 'slider__prev-svg')
       transition(name="slide-prev" mode="out-in")
         .slider__pic-wrap(:key="getSlide('prev').photo")
-            img(:src="getSlide('prev').photo", alt="getSlide('prev').title").slider__small-pic
+            img(:src=`http://webdev-api.loftschool.com/${getSlide('prev').photo}`, alt="getSlide('prev').title").slider__small-pic
     .slider__container
       a.slider__next.slider__btn(href="#" @click.prevent="slide('next')")
         +icon('portf_arrow_up', 'slider__next-svg')
       transition(name="slide-next" mode="out-in")
         .slider__pic-wrap(:key="getSlide('next').photo")
-          img(:src="getSlide('next').photo", alt="getSlide('next').title").slider__small-pic
+          img(:src=`http://webdev-api.loftschool.com/${getSlide('next').photo}`, alt="getSlide('next').title").slider__small-pic

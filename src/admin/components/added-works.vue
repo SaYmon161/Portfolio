@@ -1,7 +1,7 @@
 <template lang="pug">
-  .article
-    h3.article__title {{article.title}}
-    button(@click="deleteArticle").blog__btn Удалить
+  .work
+    h3.work__title {{work.title}}
+    button(@click="deleteWork").works__btn Удалить
 </template>
 
 <script>
@@ -9,15 +9,15 @@ import { mapActions } from "vuex";
 
 export default {
   props: {
-    article: {
+    work: {
       type: Object,
       default: () => {}
     }
   },
   methods: {
-    ...mapActions(["deleteCurrentArticle"]),
-    deleteArticle() {
-      this.deleteCurrentArticle(this.article.id);
+    ...mapActions(["deleteCurrentWork"]),
+    deleteWork() {
+      this.deleteCurrentWork(this.work.id);
     }
   }
 };
@@ -25,7 +25,7 @@ export default {
 
 
 <style lang="scss">
-.article {
+.work {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@ export default {
   margin-bottom: 20px;
 }
 
-.article__title {
+.work__title {
   width: 70%;
   font-size: 18px;
 }

@@ -1,14 +1,16 @@
 import Vue from "vue";
+import axios from "axios";
 
 const info = {
   template: "#slider__info",
   props: {
     work: Object
   },
+  mounted() {
+    console.log(this.work);
+    console.log(this.work.title);
+  },
   methods: {
-    callback(eventName) {
-      console.log(eventName);
-    },
     skillsAnimate(el, done) {
       const sentence = el.innerText.trim();
       const splitSpan = sentence
@@ -49,7 +51,13 @@ const info = {
 const display = {
   template: "#slider__display",
   props: {
-    work: Object
+    work: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  created() {
+    console.log(this.work);
   }
 };
 
@@ -59,12 +67,17 @@ const buttons = {
     works: Array,
     currentSlide: Number
   },
+  created() {
+    console.log(this.works);
+  },
   methods: {
     slide(direction) {
       this.$emit("slide", direction);
     },
     getSlide(direction) {
       let worksArray = [...this.works];
+      console.log(worksArray);
+
       switch (direction) {
         case "prev":
           const lastSlide = this.works[this.works.length - 1];
@@ -94,8 +107,12 @@ new Vue({
     currentSlide: 0
   },
   created() {
-    this.works = require("../../../data/works.json");
-    this.currentWork = this.works[0];
+    axios.get("http://webdev-api.loftschool.com/works/16").then(response => {
+      this.works = [...response.data];
+      this.currentWork = this.works[0];
+      console.log(this.currentWork);
+    });
+    //this.works = require("../../../data/works.json");
   },
   methods: {
     handleSlide(direction) {
@@ -107,7 +124,6 @@ new Vue({
         this.currentSlide = this.works.length - 1;
       }
       this.currentWork = this.works[this.currentSlide];
-      console.log(this.currentSlide);
     }
   },
   template: "#slider"

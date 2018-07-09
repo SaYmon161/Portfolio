@@ -1,0 +1,31 @@
+script(type="text/x-template")#articles
+  .container.blog__container
+    asideMenu(
+      :articles="articles"
+    )
+    articlesSection(
+      :articles="articles"
+    )
+
+script(type="text/x-template")#aside-menu
+  aside.blog__aside-menu
+    ul.blog__list(ref="blogList")
+      li.blog__item(
+        v-for="article in articles"
+      )
+        a.blog__link(
+          :data-name="article.title"
+          href="#"
+          ) {{article.title}}
+    .blog__pull-tag
+
+script(type="text/x-template")#articles-section
+  section.blog__articles
+    article.article(
+      v-for="article in articles"
+      :data-name="article.title"
+      )
+      h2 {{article.title}}
+      span {{stringDate(article.date)}}
+      div 
+        p {{article.content}}
