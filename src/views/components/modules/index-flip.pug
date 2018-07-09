@@ -32,30 +32,61 @@ script(type="text/x-template")#side-b
     h2.block-subtitle.welcome-page__auth-title Авторизуйтесь
     form.auth-form(action="")
       label(class="auth-form__input-label" for="login")
-        input(v-model="login" class="auth-form__input" id="login" type="text" placeholder="Логин")
+        input(
+          v-model="user.name"
+          class="auth-form__input"
+          id="login"
+          type="text"
+          placeholder="Логин"
+          )
         .auth-form__ico-wrap
           +icon("login", "auth-form__input-svg")
         transition(name="error")
-          .error.auth-form__error(v-if="!validLogin")  {{ errorText }}      
+          .error.auth-form__error(v-if="!validLogin && errorShow")  {{ errorText }}      
       label(class="auth-form__input-label" for="password")
-        input(v-model="pass" class="auth-form__input" id="password" type="password" placeholder="Пароль")
+        input(
+          v-model="user.password"
+          class="auth-form__input"
+          id="password" type="password"
+          placeholder="Пароль"
+          )
         .auth-form__ico-wrap
           +icon("password", "auth-form__input-svg")
         transition(name="error")
-          .error.auth-form__error(v-if="!validPass") {{ errorText }}
+          .error.auth-form__error(v-if="!validPass && errorShow") {{ errorText }}
       label(class="auth-form__check-label" for="human-check")
-        input(class="auth-form__check" id="human-check" type="checkbox")
+        input(
+          class="auth-form__check"
+          id="human-check"
+          type="checkbox"
+          v-model="capcha[0]"
+          )
         .auth-form__check-block
           +icon('check', 'auth-form__check-svg')
         | Я человек
       .auth-form__quest Вы точно не робот?
       .auth-form__row
         label(class="auth-form__radio-label")
-          input(class="auth-form__radio" id="human-yes" type="radio" name="human-check")
+          input(
+            class="auth-form__radio"
+            id="human-yes"
+            type="radio"
+            name="human-check"
+            value="yes"
+            v-model="capcha[1]"
+            )
           .auth-form__custom-radio
           | Да
         label(class="auth-form__radio-label")
-          input(class="auth-form__radio" id="human-not-sure" type="radio" name="human-check")
+          input(
+            class="auth-form__radio"
+            id="human-not-sure"
+            type="radio"
+            name="human-check"
+            checked
+            value="notSure"
+            v-model="capcha[1]"
+            )
           .auth-form__custom-radio
           | Не уверен
       .auth-form__btn-row

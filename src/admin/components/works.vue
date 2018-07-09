@@ -1,3 +1,3 @@
 <template lang="pug">
-  h2 This is title components!
+  h1 МОИ РАБОТЫ
 </template>
