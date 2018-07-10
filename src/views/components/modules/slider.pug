@@ -30,8 +30,8 @@ script(type="text/x-template")#slider__info
 script(type="text/x-template")#slider__display
   .slider__display
     transition(name="display" mode="out-in")
-      .slider__pic-wrap(:key="work.photo")
-        img(:src=`http://webdev-api.loftschool.com/${work.photo}`, :alt="work.title").slider__big-pic
+    .slider__pic-wrap(:key="work.photo")
+      img(:src=`http://webdev-api.loftschool.com/${work.photo}`, :alt="work.title").slider__big-pic
   
 script(type="text/x-template")#slider__buttons
   .slider__buttons

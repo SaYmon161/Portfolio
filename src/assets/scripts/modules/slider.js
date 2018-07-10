@@ -51,10 +51,7 @@ const info = {
 const display = {
   template: "#slider__display",
   props: {
-    work: {
-      type: Object,
-      default: () => {}
-    }
+    work: Object
   },
   created() {
     console.log(this.work);
@@ -108,7 +105,7 @@ new Vue({
   },
   created() {
     axios.get("http://webdev-api.loftschool.com/works/16").then(response => {
-      this.works = [...response.data];
+      this.works = response.data;
       this.currentWork = this.works[0];
       console.log(this.currentWork);
     });
