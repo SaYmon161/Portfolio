@@ -19,8 +19,6 @@ const blog = {
   },
   actions: {
     addNewArticle({ commit }, article) {
-      console.log(article);
-
       return this.$axios
         .post("/posts", article)
         .then(response => {

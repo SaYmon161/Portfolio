@@ -19,8 +19,6 @@ const works = {
   },
   actions: {
     addNewWork({ commit }, work) {
-      console.log(work);
-
       return this.$axios
         .post("/works", work)
         .then(response => {

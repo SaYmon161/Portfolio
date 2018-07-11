@@ -59,7 +59,8 @@ body {
   overflow: hidden;
   height: 100%;
   position: relative;
-  background: url("../assets/images/header/water-1920.jpg");
+  background: url("../assets/images/header/water-1920.jpg") center no-repeat /
+    cover;
 }
 
 .container {

@@ -11,8 +11,6 @@ const skills = {
     },
     deleteSkillFromState(state, skillId) {
       for (let i = 0; i < state.data.length; i++) {
-        console.log(state.data[i]);
-
         if (state.data[i].id === skillId) {
           const deleted = state.data.splice(i, 1);
         }

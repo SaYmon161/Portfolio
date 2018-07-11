@@ -8,16 +8,19 @@
           v-model="newWork.title"
           type="text"
           placeholder="Название проекта"
+          ref="input-title"
           )
         input.works__input(
           v-model="newWork.techs"
           type="text"
           placeholder="Технологии"
+          ref="input-techs"
           )
         input.works__input(
           v-model="newWork.link"
           type="text"
           placeholder="Ссылка"
+          ref="input-link"
           )
         label.works__label
           input.works__file(
@@ -66,19 +69,42 @@ export default {
     ...mapActions(["addNewWork", "fetchWorks"]),
     addPhoto(e) {
       const files = e.target.files;
-      console.log(files);
 
       if (files.length === 0) return;
 
       this.newWork.photo = files[0];
     },
     addWork() {
+      const inputTitle = this.$refs["input-title"];
+      const inputTechs = this.$refs["input-techs"];
+      const inputLink = this.$refs["input-link"];
+
+      if (!this.newWork.title) {
+        inputTitle.style.border = "1px solid red";
+        return;
+      } else {
+        inputTitle.style.border = "";
+      }
+
+      if (!this.newWork.techs) {
+        inputTechs.style.border = "1px solid red";
+        return;
+      } else {
+        inputTechs.style.border = "";
+      }
+
+      if (!this.newWork.link) {
+        inputLink.style.border = "1px solid red";
+        return;
+      } else {
+        inputLink.style.border = "";
+      }
+
       const formData = new FormData();
 
       Object.keys(this.newWork).forEach(prop => {
         formData.append(prop, this.newWork[prop]);
       });
-      console.log(this.newWork);
 
       this.addNewWork(formData).then(r => {
         this.newWork.title = "";

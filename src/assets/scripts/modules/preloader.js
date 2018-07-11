@@ -31,8 +31,6 @@ export default function preloader() {
       }
 
       for (let item of images) {
-        console.log(item);
-
         const shadowImg = new Image();
         shadowImg.onload = e => {
           imgLoaded++;

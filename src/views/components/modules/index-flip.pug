@@ -42,7 +42,7 @@ script(type="text/x-template")#side-b
         .auth-form__ico-wrap
           +icon("login", "auth-form__input-svg")
         transition(name="error")
-          .error.auth-form__error(v-if="!validLogin && errorShow")  {{ errorText }}      
+          .error.auth-form__error(v-if="errorShow && (!validLogin || unauthorized)")  {{ errorText }}      
       label(class="auth-form__input-label" for="password")
         input(
           v-model="user.password"
@@ -53,12 +53,13 @@ script(type="text/x-template")#side-b
         .auth-form__ico-wrap
           +icon("password", "auth-form__input-svg")
         transition(name="error")
-          .error.auth-form__error(v-if="!validPass && errorShow") {{ errorText }}
+          .error.auth-form__error(v-if="errorShow && !validPass") {{ errorText }}
       label(class="auth-form__check-label" for="human-check")
         input(
           class="auth-form__check"
           id="human-check"
           type="checkbox"
+          value="imahuman"
           v-model="capcha[0]"
           )
         .auth-form__check-block
@@ -89,6 +90,9 @@ script(type="text/x-template")#side-b
             )
           .auth-form__custom-radio
           | Не уверен
+        transition(name="error")
+          .error.auth-form__error(v-if="robotDetected") Роботам хода нет!
       .auth-form__btn-row
         button(type = "button" @click="$emit('side-change')").auth-form__btn На главную
         button(@click.prevent="submit" type = "submit").auth-form__btn Войти
+  

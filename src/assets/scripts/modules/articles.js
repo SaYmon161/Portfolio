@@ -120,8 +120,14 @@ new Vue({
       closeMenu();
     });
 
+    let windowWidth = window.innerWidth;
+
+    window.addEventListener("resize", () => {
+      windowWidth = window.innerWidth;
+    });
+
     function openMenu() {
-      pullTag.style.left = "212px";
+      pullTag.style.left = windowWidth * 0.7 - 40 + "px";
       blogList.style.left = "0";
       menuOpened = true;
     }
@@ -138,7 +144,6 @@ new Vue({
       } else {
         closeMenu();
       }
-      console.log(menuOpened);
     });
   },
   template: "#articles"

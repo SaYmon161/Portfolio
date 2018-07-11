@@ -7,9 +7,9 @@
       button(@click="deleteSkill").about__btn Удалить
   tr(v-else).skill__table-row
     td
-      input(type="text" v-model="newSkill.title").skill__input.skill__title-input
+      input(type="text" v-model="newSkill.title" ref="input-title").skill__input.skill__title-input
     td
-      input(type="text" v-model="newSkill.percents").skill__input.skill__percent-input
+      input(type="text" v-model="newSkill.percents" ref="input-percent").skill__input.skill__percent-input
       span %
     td
       button(@click="addSkill").about__btn Добавить
@@ -45,6 +45,28 @@ export default {
   methods: {
     ...mapActions(["addNewSkill", "deleteCurrentSkill"]),
     addSkill() {
+      const inputTitle = this.$refs["input-title"];
+      const inputPercent = this.$refs["input-percent"];
+
+      if (!this.newSkill.title) {
+        inputTitle.style.border = "1px solid red";
+        return;
+      } else {
+        inputTitle.style.border = "";
+      }
+
+      if (
+        !this.newSkill.percents ||
+        parseInt(this.newSkill.percents) != Number ||
+        parseInt(this.newSkill.percents) < 0 ||
+        parseInt(this.newSkill.percents) > 0
+      ) {
+        inputPercent.style.border = "1px solid red";
+        return;
+      } else {
+        inputPercent.style.border = "";
+      }
+
       this.addNewSkill(this.newSkill).then(r => {
         this.newSkill.title = "";
         this.newSkill.percents = "";
@@ -81,6 +103,7 @@ export default {
 
 .skill__percent-input {
   width: 50px;
+  padding: 20px 5px;
 }
 
 .about__btn {

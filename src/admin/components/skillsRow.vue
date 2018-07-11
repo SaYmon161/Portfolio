@@ -42,6 +42,10 @@ export default {
 
 
 <style lang="scss">
+table {
+  width: 100%;
+}
+
 .skills__row {
   width: 350px;
   height: 100%;

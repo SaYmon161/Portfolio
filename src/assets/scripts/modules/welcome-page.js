@@ -21,11 +21,16 @@ const sideB = {
         name: "",
         password: ""
       },
-      validLogin: "true",
-      validPass: "true",
-      errorShow: "false",
+      validLogin: true,
+      validPass: true,
+      unauthorized: false,
+      errorShow: false,
+      robotDetected: false,
       capcha: [false, "notSure"]
     };
+  },
+  created() {
+    this.errorShow = false;
   },
   methods: {
     login() {
@@ -39,6 +44,17 @@ const sideB = {
 
             window.location.href = "/admin";
           }
+        })
+        .catch(e => {
+          if (e.response.status === 401) {
+            this.errorShow = true;
+            this.unauthorized = true;
+            this.errorText = "Неверный логин или пароль!";
+            this.clearForm();
+            const timer = setTimeout(() => {
+              this.errorShow = false;
+            }, 3000);
+          }
         });
     },
     submit() {
@@ -46,33 +62,46 @@ const sideB = {
         this.validLogin = false;
         this.errorShow = true;
         this.errorText = "Поле не может быть пустым!";
+        this.clearForm();
+        const timer = setTimeout(() => {
+          this.errorShow = false;
+        }, 3000);
+        return;
       } else {
-        this.errorShow = false;
         this.validLogin = true;
       }
 
       if (this.validLogin) {
         if (!this.user.password || this.user.password === "") {
           this.validPass = false;
-          this.errorShow = true;
           this.errorText = "Поле не может быть пустым!";
+          this.errorShow = true;
+          this.clearForm();
+          const timer = setTimeout(() => {
+            this.errorShow = false;
+          }, 3000);
+          return;
         } else {
-          this.errorShow = false;
           this.validPass = true;
         }
       }
 
-      if (
-        this.validLogin &&
-        this.validPass &&
-        this.capcha[0] &&
-        this.capcha[1] === "yes"
-      )
+      if (this.capcha[0] && this.capcha[1] === "yes") {
         this.login();
-
-      const timer = setTimeout(() => {
-        this.errorShow = false;
-      }, 3000);
+      } else {
+        this.robotDetected = true;
+        this.clearForm();
+        const timer = setTimeout(() => {
+          this.errorShow = false;
+        }, 3000);
+        return;
+      }
+    },
+    clearForm() {
+      this.user.name = "";
+      this.user.password = "";
+      this.capcha[0] = false;
+      this.capcha[1] = "notSure";
     }
   }
 };

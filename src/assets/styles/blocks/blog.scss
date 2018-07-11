@@ -17,7 +17,7 @@
     height: 100%;
   }
 
-  @include mobileL{
+  @include mobileL {
     width: unset;
     height: 100%;
   }
@@ -32,9 +32,7 @@
   transform: translate3d(0, 0, 0);
 }
 
-
-
-.blog__header-container  {
+.blog__header-container {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
@@ -59,11 +57,11 @@
 
 .blog__maincontent {
   &:after {
-    content: '';
+    content: "";
     display: block;
     height: 185px;
     background: $white;
-    
+
     @include tablets {
       height: 275px;
     }
@@ -77,6 +75,10 @@
 .blog__container {
   display: flex;
   padding-top: 15px;
+
+  @include tablets {
+    width: 90%;
+  }
 }
 
 .blog__aside-menu {
@@ -93,17 +95,13 @@
   }
 
   @include tablets {
-    display: none;
-  }
-
-  @include mobileL {
     display: block;
     position: absolute;
     top: -100%;
     left: 0;
     z-index: 135;
     background-color: $green;
-    width: 285px;
+    width: 70%;
   }
 }
 
@@ -112,7 +110,7 @@
   flex-direction: column;
   align-items: flex-end;
 
-  @include mobileL {
+  @include tablets {
     position: fixed;
     left: 0;
     height: 100%;
@@ -137,16 +135,15 @@
     width: 29%;
   }
 
-  @include mobileL {
+  @include tablets {
     right: unset;
     width: unset;
-    width: 285px;
-    left: -285px;
+    width: 70%;
+    left: -70%;
   }
 }
 
 .blog__item {
-  width: 80%;
   margin-bottom: 25px;
   &:last-child {
     margin-bottom: 0;
@@ -155,7 +152,7 @@
   justify-content: flex-end;
   align-items: center;
   &:after {
-    content: '';
+    content: "";
     margin-left: 20px;
     height: 40px;
     min-width: 3px;
@@ -163,24 +160,24 @@
     display: flex;
     opacity: 0;
 
-    @include mobileL {
+    @include tablets {
       display: none;
     }
   }
 
-  @include mobileL {
-    color: $white
+  @include tablets {
+    color: $white;
   }
 }
 
 .blog__item--active {
   color: $green;
   &:after {
-    content: '';
+    content: "";
     opacity: 1;
   }
 
-  @include mobileL {
+  @include tablets {
     color: $white;
     font-weight: 800;
   }
@@ -188,19 +185,19 @@
 
 .blog__pull-tag {
   display: none;
+  position: fixed;
+  top: 50%;
+  left: -40px;
+  background-color: $green;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 130;
+  transition: left 0.8s linear;
+  opacity: 0.8;
 
-  @include mobileL {
+  @include tablets {
     display: block;
-    position: fixed;
-    top: 50%;
-    left: -40px;
-    background-color: $green;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    z-index: 130;
-    transition: left 0.8s linear;
-    opacity: 0.8;
   }
 }
 
@@ -208,6 +205,10 @@
   width: 60%;
 
   @include tablets {
-    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }

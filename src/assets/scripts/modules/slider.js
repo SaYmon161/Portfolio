@@ -6,10 +6,6 @@ const info = {
   props: {
     work: Object
   },
-  mounted() {
-    console.log(this.work);
-    console.log(this.work.title);
-  },
   methods: {
     skillsAnimate(el, done) {
       const sentence = el.innerText.trim();
@@ -52,9 +48,6 @@ const display = {
   template: "#slider__display",
   props: {
     work: Object
-  },
-  created() {
-    console.log(this.work);
   }
 };
 
@@ -64,17 +57,12 @@ const buttons = {
     works: Array,
     currentSlide: Number
   },
-  created() {
-    console.log(this.works);
-  },
   methods: {
     slide(direction) {
       this.$emit("slide", direction);
     },
     getSlide(direction) {
       let worksArray = [...this.works];
-      console.log(worksArray);
-
       switch (direction) {
         case "prev":
           const lastSlide = this.works[this.works.length - 1];
@@ -98,6 +86,7 @@ new Vue({
     display,
     buttons
   },
+
   data: {
     works: [],
     currentWork: {},
@@ -105,11 +94,17 @@ new Vue({
   },
   created() {
     axios.get("http://webdev-api.loftschool.com/works/16").then(response => {
-      this.works = response.data;
+      for (let work of response.data) {
+        let obj = new Object();
+        obj.id = work.id;
+        obj.title = work.title;
+        obj.skills = work.techs;
+        obj.photo = `http://webdev-api.loftschool.com/${work.photo}`;
+        obj.link = work.link;
+        this.works.push(obj);
+      }
       this.currentWork = this.works[0];
-      console.log(this.currentWork);
     });
-    //this.works = require("../../../data/works.json");
   },
   methods: {
     handleSlide(direction) {

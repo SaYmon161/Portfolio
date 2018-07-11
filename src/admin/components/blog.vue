@@ -8,16 +8,19 @@
           v-model="newArticle.title"
           type="text"
           placeholder="Название"
+          ref="input-title"
           )
         input.blog__input(
           v-model="newArticle.date"
           type="text"
           placeholder="Дата"
+          ref="input-date"
           )
         textarea(
           v-model="newArticle.content"
           placeholder="Содержание"
-        ).blog__text
+          ref="input-content"
+          ).blog__text
         button.blog__btn(@click="addArticle") Добавить
       .blog__right-block
         .blog__description Добавленные статьи
@@ -56,6 +59,31 @@ export default {
   methods: {
     ...mapActions(["addNewArticle", "fetchArticles"]),
     addArticle() {
+      const inputTitle = this.$refs["input-title"];
+      const inputDate = this.$refs["input-date"];
+      const inputContent = this.$refs["input-content"];
+
+      if (!this.newArticle.title) {
+        inputTitle.style.border = "1px solid red";
+        return;
+      } else {
+        inputTitle.style.border = "";
+      }
+
+      if (!this.newArticle.date) {
+        inputDate.style.border = "1px solid red";
+        return;
+      } else {
+        inputDate.style.border = "";
+      }
+
+      if (!this.newArticle.content) {
+        inputContent.style.border = "1px solid red";
+        return;
+      } else {
+        inputContent.style.border = "";
+      }
+
       this.addNewArticle(this.newArticle).then(r => {
         this.newArticle.title = "";
         this.newArticle.date = "";

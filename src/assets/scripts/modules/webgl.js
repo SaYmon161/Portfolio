@@ -69,9 +69,11 @@ function render() {
   renderer.render(scene, camera);
 }
 
-document.addEventListener("mousemove", function(event) {
-  TweenLite.to(uniforms.u_mouse.value, 1, {
-    x: (event.pageX / window.innerWidth - 0.5) * 3,
-    y: (event.pageY / window.innerHeight - 0.5) * 3
+if (window.innerWidth > 768) {
+  document.addEventListener("mousemove", function(event) {
+    TweenLite.to(uniforms.u_mouse.value, 1, {
+      x: (event.pageX / window.innerWidth - 0.5) * 3,
+      y: (event.pageY / window.innerHeight - 0.5) * 3
+    });
   });
-});
+}
