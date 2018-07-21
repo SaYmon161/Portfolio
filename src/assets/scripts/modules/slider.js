@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from "axios";
 
 const info = {
   template: "#slider__info",
@@ -6,9 +7,6 @@ const info = {
     work: Object
   },
   methods: {
-    callback(eventName) {
-      console.log(eventName);
-    },
     skillsAnimate(el, done) {
       const sentence = el.innerText.trim();
       const splitSpan = sentence
@@ -88,14 +86,25 @@ new Vue({
     display,
     buttons
   },
+
   data: {
     works: [],
     currentWork: {},
     currentSlide: 0
   },
   created() {
-    this.works = require("../../../data/works.json");
-    this.currentWork = this.works[0];
+    axios.get("http://webdev-api.loftschool.com/works/16").then(response => {
+      for (let work of response.data) {
+        let obj = new Object();
+        obj.id = work.id;
+        obj.title = work.title;
+        obj.skills = work.techs;
+        obj.photo = `http://webdev-api.loftschool.com/${work.photo}`;
+        obj.link = work.link;
+        this.works.push(obj);
+      }
+      this.currentWork = this.works[0];
+    });
   },
   methods: {
     handleSlide(direction) {
@@ -107,7 +116,6 @@ new Vue({
         this.currentSlide = this.works.length - 1;
       }
       this.currentWork = this.works[this.currentSlide];
-      console.log(this.currentSlide);
     }
   },
   template: "#slider"

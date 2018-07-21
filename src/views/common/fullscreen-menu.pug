@@ -5,7 +5,7 @@
   .fullscreen-menu__container
     .fullscreen-menu__right
     .fullscreen-menu__left
-    ul.fullscreen-menu__list
+    ul.fullscreen-menu__list(:class="{'fullscreen-menu__list--active' : changed}")
       - var menu = [["Мои работы", "my-works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"], ["Авторизация", "index.html"]]
       each item in menu
         li.fullscreen-menu__item

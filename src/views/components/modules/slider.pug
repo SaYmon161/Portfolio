@@ -2,13 +2,16 @@ script(type="text/x-template")#slider
   .slider
     info(
       :work="currentWork"
+      v-if="works.length > 0"
       )
     display(
       :work="currentWork"
+      v-if="works.length > 0"
       )
     buttons(
       :works="works"
       :currentSlide="currentSlide"
+      v-if="works.length > 0"
       @slide="handleSlide"
       )
   

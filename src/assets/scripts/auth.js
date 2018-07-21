@@ -4,5 +4,4 @@ document.addEventListener("DOMContentLoaded", e => {
   preloader().loaded();
 });
 
-import "./modules/webgl";
-import "./modules/index-flip";
+import "./modules/welcome-page";

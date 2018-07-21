@@ -71,6 +71,7 @@
     "not ie <= 8"
   ],
   "dependencies": {
+    "axios": "^0.18.0",
     "hamburgers": "^0.9.3",
     "mobile-detect": "^1.4.2",
     "normalize.css": "^7.0.0",
@@ -80,6 +81,9 @@
     "pug": "^2.0.3",
     "request": "^2.87.0",
     "signale": "^1.1.0",
-    "vue": "2.5.13"
+    "simplebar": "^2.6.1",
+    "vue": "2.5.13",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   }
 }

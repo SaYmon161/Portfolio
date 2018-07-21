@@ -57,17 +57,16 @@
   font-size: 0;
   min-height: 25px;
   text-align: center;
-  
+
   span {
     font-size: 16px;
     display: inline-block;
-    
+
     &.whitespace:after {
-      content: "\00a0"
+      content: "\00a0";
     }
   }
 }
-
 
 .slider__info-btn-svg {
   width: 20px;
@@ -157,6 +156,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  width: 50%;
 }
 
 .slider__btn {
@@ -165,7 +165,7 @@
   position: absolute;
   z-index: 150;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -209,21 +209,20 @@
   fill: white;
 }
 
-
 .slide-prev-enter-active {
-  animation: zoomOutUp .4s reverse;
+  animation: zoomOutUp 0.4s reverse;
 }
 
 .slide-prev-leave-active {
-  animation: zoomOutDown .4s;
+  animation: zoomOutDown 0.4s;
 }
 
 .slide-next-enter-active {
-  animation: zoomOutDown .4s reverse;
+  animation: zoomOutDown 0.4s reverse;
 }
 
 .slide-next-leave-active {
-  animation: zoomOutUp .4s
+  animation: zoomOutUp 0.4s;
 }
 
 @keyframes zoomOutDown {
@@ -257,11 +256,11 @@
 }
 
 .display-leave-active {
-  animation: bounceOut .4s;
+  animation: bounceOut 0.4s;
 }
 
 .display-enter-active {
-  animation: bounceIn .4s;
+  animation: bounceIn 0.4s;
 }
 
 @keyframes bounceIn {
@@ -320,11 +319,11 @@
 }
 
 .title-leave-active {
-  animation: flipOutX .4s;
+  animation: flipOutX 0.4s;
 }
 
 .title-enter-active {
-  animation: flipInX .4s;
+  animation: flipInX 0.4s;
 }
 
 @keyframes flipOutX {
@@ -370,7 +369,7 @@
 }
 
 .animated-flip {
-  animation: anim-flip .8s;
+  animation: anim-flip 0.8s;
 }
 
 @keyframes anim-flip {
@@ -392,7 +391,7 @@
   }
 
   60% {
-    transform: perspective(400px)rotate3d(0, 1, 0, -180deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
     animation-timing-function: ease-in;
   }
 

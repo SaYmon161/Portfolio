@@ -50,7 +50,9 @@
   }
 }
 
-
+.fullscreen-menu__list--active {
+  transition-delay: 0s
+}
 
 .fullscreen-menu__item {
   margin-bottom: 55px;
