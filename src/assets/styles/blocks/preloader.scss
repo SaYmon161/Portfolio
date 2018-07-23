@@ -5,7 +5,7 @@
   right: 0;
   height: 100%;
   z-index: 140;
-  background: url("/assets/images/preloader/forest_prel_bg.jpg") center / cover;
+  background: url("./assets/images/preloader/forest_prel_bg.jpg") center / cover;
   transition: top 1s linear;
 }
 
@@ -26,13 +26,13 @@
 .preloader__group {
   stroke: $white;
   stroke-dasharray: 98;
-  animation: wave 2s cubic-bezier(1,0,.4,1)  infinite;
+  animation: wave 2s cubic-bezier(1, 0, 0.4, 1) infinite;
 
   &--mid {
-    animation-delay: .15s
+    animation-delay: 0.15s;
   }
   &--bot {
-    animation-delay: .3s
+    animation-delay: 0.3s;
   }
 }
 
@@ -51,5 +51,5 @@
 }
 
 .hide {
-  top: -100%
+  top: -100%;
 }
