@@ -1,19 +1,43 @@
+//- script(type="text/x-template")#skills-list
+//-   ul.skills__list(ref="skillList")
+//-     li.skills__item.skills-row(v-for="type in types")
+//-       skillsRow(
+//-         :skills="skills"
+//-         :type="type"
+//-       )
+
+//- script(type="text/x-template")#skills-row
+//-   .skills-row
+//-     .skills__title {{type.name}}
+//-     .skills-row__list
+//-       skill.skills-row__item(
+//-         v-for="skill in skills"
+//-         v-if="skill.category === type.id"
+//-         :skill="skill"
+//-         )
+
+//- script(type="text/x-template")#skill
+//-   figure.skill
+//-     svg(viewBox = '0 0 100 100' preserveAspectRatio='none').skill__figure
+//-       circle(cx = '50' cy = '50' r = '40').skill__circle.skill__circle--under
+//-       circle(cx = '50' cy = '50' r = '40' ref="color-circle").skill__circle.skill__circle--above
+//-     .skill__title {{skill.title}}
+
 script(type="text/x-template")#skills-list
   ul.skills__list(ref="skillList")
-    li.skills__item.skills-row(v-for="type in types")
+    li.skills__item.skills-row(v-for="skill in skills")
       skillsRow(
-        :skills="skills"
-        :type="type"
+        :skill="skill"
       )
 
 script(type="text/x-template")#skills-row
   .skills-row
-    .skills__title {{type.name}}
-    .skills-row__list
-      skill.skills-row__item(
-        v-for="skill in skills"
-        v-if="skill.category === type.id"
-        :skill="skill"
+    .skills__title {{skill.skillsGroup}}
+    ul.skills-row__list
+      li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
+        skill(
+          :skillName="skillName",
+          :skillPercent="skillPercent"
         )
 
 script(type="text/x-template")#skill
@@ -21,4 +45,4 @@ script(type="text/x-template")#skill
     svg(viewBox = '0 0 100 100' preserveAspectRatio='none').skill__figure
       circle(cx = '50' cy = '50' r = '40').skill__circle.skill__circle--under
       circle(cx = '50' cy = '50' r = '40' ref="color-circle").skill__circle.skill__circle--above
-    .skill__title {{skill.title}}
+    .skill__title {{skillName}}

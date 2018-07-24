@@ -26,6 +26,7 @@ script(type="text/x-template")#articles-section
       :data-name="article.title"
       )
       h2 {{article.title}}
-      span {{stringDate(article.date)}}
+      //- span {{stringDate(article.date)}}
+      span {{article.date}}
       div 
         p {{article.content}}

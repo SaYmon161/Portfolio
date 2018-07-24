@@ -12,20 +12,20 @@ const articlesSection = {
   template: "#articles-section",
   props: {
     articles: Array
-  },
-  methods: {
-    stringDate(unixDate) {
-      const date = new Date(unixDate * 1000);
-      const year = date.getFullYear();
-      const month = zeroFill(date.getMonth() + 1, 2);
-      const day = zeroFill(date.getDate(), 2);
-      return `${day}.${month}.${year}`;
-
-      function zeroFill(num, len) {
-        return (Array(len).join("0") + num).slice(-len);
-      }
-    }
   }
+  // methods: {
+  //   stringDate(unixDate) {
+  //     const date = new Date(unixDate * 1000);
+  //     const year = date.getFullYear();
+  //     const month = zeroFill(date.getMonth() + 1, 2);
+  //     const day = zeroFill(date.getDate(), 2);
+  //     return `${day}.${month}.${year}`;
+
+  //     function zeroFill(num, len) {
+  //       return (Array(len).join("0") + num).slice(-len);
+  //     }
+  //   }
+  // }
 };
 
 new Vue({
@@ -38,11 +38,12 @@ new Vue({
     articles: []
   },
   created() {
-    axios.get("http://webdev-api.loftschool.com/posts/16").then(response => {
-      this.articles = response.data;
-    });
+    // axios.get("http://webdev-api.loftschool.com/posts/16").then(response => {
+    //   this.articles = response.data;
+    // });
+    this.articles = require("../../../data/blog.json");
   },
-  updated() {
+  mounted() {
     const blogList = document.querySelector(".blog__list");
     const articles = document.querySelectorAll(".article");
     const links = document.querySelectorAll(".blog__link");
