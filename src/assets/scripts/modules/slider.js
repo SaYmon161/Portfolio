@@ -93,18 +93,20 @@ new Vue({
     currentSlide: 0
   },
   created() {
-    axios.get("http://webdev-api.loftschool.com/works/16").then(response => {
-      for (let work of response.data) {
-        let obj = new Object();
-        obj.id = work.id;
-        obj.title = work.title;
-        obj.skills = work.techs;
-        obj.photo = `http://webdev-api.loftschool.com/${work.photo}`;
-        obj.link = work.link;
-        this.works.push(obj);
-      }
-      this.currentWork = this.works[0];
-    });
+    // axios.get("http://webdev-api.loftschool.com/works/16").then(response => {
+    //   for (let work of response.data) {
+    //     let obj = new Object();
+    //     obj.id = work.id;
+    //     obj.title = work.title;
+    //     obj.skills = work.techs;
+    //     obj.photo = `http://webdev-api.loftschool.com/${work.photo}`;
+    //     obj.link = work.link;
+    //     this.works.push(obj);
+    //   }
+    //   this.currentWork = this.works[0];
+    // });
+    this.works = require("../../../data/works.json");
+    this.currentWork = this.works[0];
   },
   methods: {
     handleSlide(direction) {

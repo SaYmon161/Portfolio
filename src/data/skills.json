@@ -1,27 +1,47 @@
 [
-    {
-      "skillsGroup": "Frontend",
-      "skills": {
-        "HTML5": 30,
-        "CSS3": 50,
-        "JavaScript & jQuery": 30
-      }
-    },
-    {
-      "skillsGroup": "Backend",
-      "skills": {
-        "PHP": 30,
-        "mySql": 60,
-        "Node.js & npm": 30,
-        "Mongo.db": 70
-      }
-    },
-    {
-      "skillsGroup": "WorkFlow",
-      "skills": {
-        "Git": 30,
-        "Gulp": 60,
-        "Yarn": 60
-      }
-    }
-  ]
+  {
+    "title": "HTML5",
+    "percents": "90",
+    "category": "0"
+  },
+  {
+    "title": "CSS3",
+    "percents": "90",
+    "category": "0"
+  },
+  {
+    "title": "JavaScript & jQuery",
+    "percents": "50",
+    "category": "0"
+  },
+  {
+    "title": "PHP",
+    "percents": "10",
+    "category": "1"
+  },
+  {
+    "title": "Node.js & npm",
+    "percents": "40",
+    "category": "1"
+  },
+  {
+    "title": "Git",
+    "percents": "70",
+    "category": "2"
+  },
+  {
+    "title": "Gulp",
+    "percents": "80",
+    "category": "2"
+  },
+  {
+    "title": "Yarn",
+    "percents": "80",
+    "category": "2"
+  },
+  {
+    "title": "Webpack",
+    "percents": "50",
+    "category": "2"
+  }
+]

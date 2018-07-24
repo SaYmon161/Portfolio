@@ -1,36 +1,30 @@
 [
-    {
-      "id": 1,
-      "title" : "1 Сайт школы онлайн образования",
-      "skills" : "1 Html, Css, JavaScript",
-      "photo" : "./assets/images/userfiles/work-1.png",
-      "link" : "//google.com"
-    },
-    {
-      "id": 2,
-      "title" : "2 Сайт школы онлайн образования",
-
-      "skills" : "2 Html, Css, JavaScript, jQuery",
-
-      "photo" : "./assets/images/userfiles/work-2.png",
-      "link" : "//yandex.ru"
-    },
-    {
-      "id": 3,
-      "title" : "3 Сайт школы онлайн образования",
-
-      "skills" : "3 JavaScript, Vue",
-
-      "photo" : "./assets/images/userfiles/work-3.png",
-      "link" : "//rambler.ru"
-    },
-    {
-      "id": 4,
-      "title" : "4 Сайт школы онлайн образования",
-
-      "skills" : "4 Html, Css, PHP",
-
-      "photo" : "./assets/images/userfiles/work-4.png",
-      "link" : "//vk.com"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Сайт-визитка Афродита",
+    "skills": "Html, Css",
+    "photo": "./assets/images/my-works/Afrodita.png",
+    "link": "//saymon161.github.io/Afrodita"
+  },
+  {
+    "id": 2,
+    "title": "Лендинг Mr.Burger",
+    "skills": "Html, Css, JavaScript, jQuery",
+    "photo": "./assets/images/my-works/MrBurger.png",
+    "link": "//saymon161.github.io/Burger"
+  },
+  {
+    "id": 3,
+    "title": "Здесь скоро будет сайт",
+    "skills": "JavaScript, React",
+    "photo": "./assets/images/my-works/laughter.png",
+    "link": "//google.com"
+  },
+  {
+    "id": 4,
+    "title": "Здесь скоро будет сайт",
+    "skills": "Javascript, Node.js",
+    "photo": "./assets/images/my-works/smiley.png",
+    "link": "//vk.com"
+  }
+]

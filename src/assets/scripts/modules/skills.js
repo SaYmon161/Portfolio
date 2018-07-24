@@ -29,6 +29,8 @@ const skill = {
     }
   },
   mounted() {
+    console.log(skill);
+
     this.drawCircle();
   }
 };
@@ -58,9 +60,11 @@ new Vue({
     ]
   },
   created() {
-    axios.get("http://webdev-api.loftschool.com/skills/16").then(response => {
-      this.skills = response.data;
-    });
+    // axios.get("http://webdev-api.loftschool.com/skills/16").then(response => {
+    //   this.skills = response.data;
+    // });
+    const data = require("../../../data/skills.json");
+    this.skills = data;
   },
   template: "#skills-list"
 });
